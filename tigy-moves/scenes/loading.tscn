@@ -2,14 +2,50 @@
 
 [ext_resource type="Script" uid="uid://x36xwexs5lc6" path="res://scripts/loading.gd" id="1_dhqfv"]
 [ext_resource type="Texture2D" uid="uid://wp7bosu7r8vb" path="res://assets/BG.png" id="2_101rs"]
+[ext_resource type="Texture2D" uid="uid://bhshux2gcwh6n" path="res://assets/txture plc holder.png" id="3_2ytni"]
 [ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="3_yt702"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="4_nxo4k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0.7408053, 0.47139567, 0.18141362, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8431838, 0.8431839, 0.84318364, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kpj8"]
+bg_color = Color(0.4843766, 0.5969794, 0.82723457, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w173s"]
+bg_color = Color(0.35479546, 0.47131866, 0.72409207, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [sub_resource type="Animation" id="Animation_2ytni"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blur:modulate")
+tracks/0/path = NodePath("Loading:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,17 +69,18 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nxo4k"]
 resource_name = "fade out"
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blur:modulate")
+tracks/0/path = NodePath("Loading:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -52,10 +89,10 @@ tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.56666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c856a"]
@@ -71,11 +108,222 @@ script = ExtResource("1_dhqfv")
 position = Vector2(640, 360)
 texture = ExtResource("2_101rs")
 
-[node name="blur" type="Panel" parent="." unique_id=761087844]
+[node name="Loading" type="Panel" parent="." unique_id=761087844]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -7.0
 offset_top = -12.0
 offset_right = 1300.0
 offset_bottom = 737.0
+
+[node name="Save1" type="Panel" parent="Loading" unique_id=406493434]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 268.0
+offset_right = 504.0
+offset_bottom = 605.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+
+[node name="Thumbnail" type="TextureRect" parent="Loading/Save1" unique_id=254553883]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 212.0
+offset_bottom = 128.0
+texture = ExtResource("3_2ytni")
+expand_mode = 1
+
+[node name="load1" type="Button" parent="Loading/Save1" unique_id=1860608820]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 264.0
+offset_right = 98.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Load"
+
+[node name="reset1" type="Button" parent="Loading/Save1" unique_id=1833608587]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 265.0
+offset_right = 204.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Reset"
+
+[node name="Label" type="Label" parent="Loading/Save1" unique_id=1613148002]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 136.0
+offset_right = 158.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+text = "Save 1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Loading/Save1" unique_id=529756152]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 195.0
+offset_bottom = 224.0
+
+[node name="date" type="Label" parent="Loading/Save1/HBoxContainer" unique_id=2131306785]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx/xx/xxxx"
+
+[node name="time" type="Label" parent="Loading/Save1/HBoxContainer" unique_id=481307851]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx:xx"
+
+[node name="Save2" type="Panel" parent="Loading" unique_id=15726205]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 268.0
+offset_right = 760.0
+offset_bottom = 605.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+
+[node name="Thumbnail" type="TextureRect" parent="Loading/Save2" unique_id=1208371018]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 212.0
+offset_bottom = 128.0
+texture = ExtResource("3_2ytni")
+expand_mode = 1
+
+[node name="load2" type="Button" parent="Loading/Save2" unique_id=443863939]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 264.0
+offset_right = 98.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Load"
+
+[node name="reset2" type="Button" parent="Loading/Save2" unique_id=1106438644]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 265.0
+offset_right = 203.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Reset"
+
+[node name="Label" type="Label" parent="Loading/Save2" unique_id=140969123]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 136.0
+offset_right = 158.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+text = "Save 2"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Loading/Save2" unique_id=1725393206]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 195.0
+offset_bottom = 224.0
+
+[node name="date" type="Label" parent="Loading/Save2/HBoxContainer" unique_id=8162890]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx/xx/xxxx"
+
+[node name="time" type="Label" parent="Loading/Save2/HBoxContainer" unique_id=1823163082]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx:xx"
+
+[node name="Save3" type="Panel" parent="Loading" unique_id=887728351]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 268.0
+offset_right = 1016.0
+offset_bottom = 605.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+
+[node name="Thumbnail" type="TextureRect" parent="Loading/Save3" unique_id=1826739667]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 212.0
+offset_bottom = 128.0
+texture = ExtResource("3_2ytni")
+expand_mode = 1
+
+[node name="load3" type="Button" parent="Loading/Save3" unique_id=2019779821]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 264.0
+offset_right = 98.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Load"
+
+[node name="reset3" type="Button" parent="Loading/Save3" unique_id=1754760667]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 265.0
+offset_right = 204.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
+text = "Reset"
+
+[node name="Label" type="Label" parent="Loading/Save3" unique_id=1470732333]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 136.0
+offset_right = 158.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 32
+text = "Save 3"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Loading/Save3" unique_id=273990249]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 195.0
+offset_bottom = 224.0
+
+[node name="date" type="Label" parent="Loading/Save3/HBoxContainer" unique_id=635922065]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx/xx/xxxx"
+
+[node name="time" type="Label" parent="Loading/Save3/HBoxContainer" unique_id=343608928]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 20
+text = "xx:xx"
 
 [node name="Label" type="Label" parent="." unique_id=1717727455]
 offset_left = 384.0
@@ -88,3 +336,10 @@ text = "Detective Tiggy"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=766631484]
 libraries/ = SubResource("AnimationLibrary_c856a")
+
+[connection signal="pressed" from="Loading/Save1/load1" to="." method="_on_load_1_pressed"]
+[connection signal="pressed" from="Loading/Save1/reset1" to="." method="_on_reset_1_pressed"]
+[connection signal="pressed" from="Loading/Save2/load2" to="." method="_on_load_2_pressed"]
+[connection signal="pressed" from="Loading/Save2/reset2" to="." method="_on_reset_2_pressed"]
+[connection signal="pressed" from="Loading/Save3/load3" to="." method="_on_load_3_pressed"]
+[connection signal="pressed" from="Loading/Save3/reset3" to="." method="_on_reset_3_pressed"]
