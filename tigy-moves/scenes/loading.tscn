@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bs0ig2sx6nyit"]
+
+[ext_resource type="Script" uid="uid://x36xwexs5lc6" path="res://scripts/loading.gd" id="1_dhqfv"]
+[ext_resource type="Texture2D" uid="uid://wp7bosu7r8vb" path="res://assets/BG.png" id="2_101rs"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="3_yt702"]
+
+[sub_resource type="Animation" id="Animation_2ytni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nxo4k"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c856a"]
+_data = {
+&"RESET": SubResource("Animation_2ytni"),
+&"fade out": SubResource("Animation_nxo4k")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1947364509]
+script = ExtResource("1_dhqfv")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1212814900]
+position = Vector2(640, 360)
+texture = ExtResource("2_101rs")
+
+[node name="blur" type="Panel" parent="." unique_id=761087844]
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 1300.0
+offset_bottom = 737.0
+
+[node name="Label" type="Label" parent="." unique_id=1717727455]
+offset_left = 384.0
+offset_top = 264.0
+offset_right = 886.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("3_yt702")
+theme_override_font_sizes/font_size = 72
+text = "Detective Tiggy"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=766631484]
+libraries/ = SubResource("AnimationLibrary_c856a")
