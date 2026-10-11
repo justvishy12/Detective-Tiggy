@@ -26,8 +26,8 @@ func refresh_slots():
 			var date = datetime[0].split("-")
 			var time = datetime[1].substr(0, 5)
 
-			slot.get_node("Container/Date").text = "%s/%s/%s" % [date[2], date[1], date[0]]
-			slot.get_node("Container/Time").text = time
+			slot.get_node("HBoxContainer/date").text = "%s/%s/%s" % [date[1], date[2], date[0]]
+			slot.get_node("HBoxContainer/time").text = time
 
 
 
@@ -37,7 +37,7 @@ func _on_load_1_pressed() -> void:
 	if FileAccess.file_exists("user://save_1.json"):
 		SaveManager.load_game(1)
 	else:
-		get_tree().change_scene_to_file('res://scene/ship_sailing.tscn')
+		get_tree().change_scene_to_file("res://scenes/starting scene.tscn")
 
 
 func _on_load_2_pressed() -> void:
@@ -45,7 +45,7 @@ func _on_load_2_pressed() -> void:
 	if FileAccess.file_exists("user://save_2.json"):
 		SaveManager.load_game(2)
 	else:
-		get_tree().change_scene_to_file('res://scene/ship_sailing.tscn')
+		get_tree().change_scene_to_file("res://scenes/starting scene.tscn")
 
 
 func _on_load_3_pressed() -> void:
@@ -53,7 +53,7 @@ func _on_load_3_pressed() -> void:
 	if FileAccess.file_exists("user://save_3.json"):
 		SaveManager.load_game(3)
 	else:
-		get_tree().change_scene_to_file('res://scene/ship_sailing.tscn')
+		get_tree().change_scene_to_file("res://scenes/starting scene.tscn")
 
 
 func _on_reset_1_pressed() -> void:

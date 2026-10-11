@@ -2,11 +2,14 @@ extends Node
 const SAVE_FOLDER = "user://"
 var current_slot = 0
 var speed: float = 0.05
+var introduction = false
+
 func save_game(slot: int) -> void:
 	var path = SAVE_FOLDER + "save_%d.json" % slot
 
 	var data = {
 		"saved_at": Time.get_datetime_string_from_system(),
+		"introduction": introduction,
 	}
 
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -47,7 +50,13 @@ func load_game(slot: int):
 
 	if data == null:
 		return null
+	introduction = data.get("introduction", false)
+	speed = data.get("speed", 0.05)
 	
+	#if introduction:
+		#get_tree().change_scene_to_file()
+	if introduction == false:
+		get_tree().change_scene_to_file("res://scenes/starting scene.tscn")
 	return data
 
 func get_save_data(slot: int):

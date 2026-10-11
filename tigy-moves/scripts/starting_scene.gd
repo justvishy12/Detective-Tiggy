@@ -29,7 +29,7 @@ var dialogue = [
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{
-		#1
+		#4
 		"speaker": "you",
 		"name": "",
 		"text": "Uhh Okay!"
@@ -98,6 +98,9 @@ func _input(event):
 
 
 func _on_you_pressed() -> void:
+	if dialogue_index == 4:
+		$AnimationPlayer.play("fade out")
+		SaveManager.introduction = true
 	dialogue_index += 1
 	show_next_dialogue()
 	

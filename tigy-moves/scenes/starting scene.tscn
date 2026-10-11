@@ -8,6 +8,45 @@
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="6_ytxec"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="7_22dcw"]
 
+[sub_resource type="Animation" id="Animation_ytxec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_22dcw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5e0w"]
+_data = {
+&"RESET": SubResource("Animation_ytxec"),
+&"fade out": SubResource("Animation_22dcw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
 [node name="Node2D" type="Node2D" unique_id=799598397]
 script = ExtResource("1_sb11l")
 
@@ -16,7 +55,7 @@ position = Vector2(640, 360)
 texture = ExtResource("1_xak0s")
 
 [node name="Tiggy" type="Sprite2D" parent="." unique_id=1284355772]
-position = Vector2(301, 572)
+position = Vector2(301, 591)
 scale = Vector2(0.7442308, 0.7442308)
 texture = ExtResource("2_gq0pv")
 
@@ -78,5 +117,17 @@ theme_override_styles/pressed = ExtResource("7_22dcw")
 theme_override_styles/hover = ExtResource("7_22dcw")
 theme_override_styles/focus = ExtResource("7_22dcw")
 text = "hahaha"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=30030982]
+libraries/ = SubResource("AnimationLibrary_n5e0w")
+
+[node name="Panel" type="Panel" parent="." unique_id=259477357]
+modulate = Color(1, 1, 1, 0)
+offset_left = -13.0
+offset_top = -9.0
+offset_right = 1291.0
+offset_bottom = 725.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
 
 [connection signal="pressed" from="you" to="." method="_on_you_pressed"]
