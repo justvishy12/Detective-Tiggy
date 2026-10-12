@@ -57,12 +57,24 @@ func _on_load_3_pressed() -> void:
 
 
 func _on_reset_1_pressed() -> void:
-	pass # Replace with function body.
+	SaveManager.delete_save(1)
+	refresh_slots()
+	$Loading/Save1/Thumbnail.texture = load("res://assets/txture plc holder.png")
+	$Loading/Save1/HBoxContainer/date.text = "xx/xx/xxxx"
+	$Loading/Save1/HBoxContainer/time.text = "xx:xx"
 
 
 func _on_reset_2_pressed() -> void:
-	pass # Replace with function body.
+	SaveManager.delete_save(2)
+	refresh_slots()
+	$Loading/Save1/Thumbnail.texture = load("res://assets/txture plc holder.png")
+	$Loading/Save1/HBoxContainer/date.text = "xx/xx/xxxx"
+	$Loading/Save1/HBoxContainer/time.text = "xx:xx"
 
 
 func _on_reset_3_pressed() -> void:
-	pass # Replace with function body.
+	SaveManager.delete_save(3)
+	refresh_slots()
+	$Loading/Save1/Thumbnail.texture = load("res://assets/txture plc holder.png")
+	$Loading/Save1/HBoxContainer/date.text = "xx/xx/xxxx"
+	$Loading/Save1/HBoxContainer/time.text = "xx:xx" 
