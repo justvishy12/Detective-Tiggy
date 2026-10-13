@@ -1,9 +1,246 @@
 [gd_scene format=3 uid="uid://bb5nteqbgqyih"]
 
-[ext_resource type="Texture2D" uid="uid://cbgyd5ynta8xv" path="res://assets/room1.png" id="1_5xnpp"]
+[ext_resource type="Texture2D" uid="uid://cbgyd5ynta8xv" path="res://assets/scene bg/room1.png" id="1_5xnpp"]
+[ext_resource type="Script" uid="uid://boo4d1fdgge26" path="res://scripts/room_1.gd" id="1_277jj"]
+[ext_resource type="Texture2D" uid="uid://vk7rql0wekxn" path="res://assets/photo1anim.png" id="2_gli6d"]
+[ext_resource type="Texture2D" uid="uid://5qpu51hcxtwu" path="res://assets/Clean Basket.png" id="4_21e2k"]
+[ext_resource type="Texture2D" uid="uid://dvgrg857vdglt" path="res://assets/DirtyBasket.png" id="5_dtrb7"]
+[ext_resource type="Texture2D" uid="uid://6bahcdx0kj8c" path="res://assets/BasketFront.png" id="6_npsde"]
+[ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="7_3k0wu"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="8_kxjkn"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="9_erp5q"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="10_8tq5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_277jj"]
+atlas = ExtResource("2_gli6d")
+region = Rect2(0, 0, 181, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_actgu"]
+atlas = ExtResource("2_gli6d")
+region = Rect2(181, 0, 181, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ujy"]
+atlas = ExtResource("2_gli6d")
+region = Rect2(362, 0, 181, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_277jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_actgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54ujy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ytxec"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_3k0wu"]
+resource_name = "basketfront"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BasketFront:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.37254903)]
+}
+
+[sub_resource type="Animation" id="Animation_22dcw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3k0wu"]
+_data = {
+&"RESET": SubResource("Animation_ytxec"),
+&"basketfront": SubResource("Animation_3k0wu"),
+&"fade out": SubResource("Animation_22dcw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxjkn"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
+[sub_resource type="Animation" id="Animation_kxjkn"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_erp5q"]
+resource_name = "camera pan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(521, 395)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.595, 0.595)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.735, 1.735)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tq5h"]
+_data = {
+&"RESET": SubResource("Animation_kxjkn"),
+&"camera pan": SubResource("Animation_erp5q")
+}
 
 [node name="Node2D" type="Node2D" unique_id=1011711845]
+script = ExtResource("1_277jj")
 
 [node name="Room1" type="Sprite2D" parent="." unique_id=327741877]
 position = Vector2(640, 360)
 texture = ExtResource("1_5xnpp")
+
+[node name="photo1" type="AnimatedSprite2D" parent="." unique_id=368923043]
+position = Vector2(838, 233)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.5
+
+[node name="photo1area" type="Area2D" parent="." unique_id=1037603451]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="photo1area" unique_id=1296767543]
+polygon = PackedVector2Array(759, 159, 926, 159, 927, 159, 914, 315, 751, 293)
+
+[node name="CleanBasket" type="Sprite2D" parent="." unique_id=604778530]
+visible = false
+position = Vector2(506, 469.99997)
+rotation = -0.061086524
+scale = Vector2(0.99342155, 0.99342155)
+texture = ExtResource("4_21e2k")
+
+[node name="DirtyBasket" type="Sprite2D" parent="." unique_id=842051799]
+position = Vector2(487.99997, 471)
+rotation = -0.061086524
+texture = ExtResource("5_dtrb7")
+
+[node name="BasketFront" type="Sprite2D" parent="." unique_id=1455284541]
+position = Vector2(505, 496)
+rotation = -0.061086524
+texture = ExtResource("6_npsde")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1070458521]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=839531]
+position = Vector2(0, 272)
+scale = Vector2(0.73214287, 0.73214287)
+texture = ExtResource("7_3k0wu")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=988829136]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("8_kxjkn")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1040828997]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("8_kxjkn")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=2111945516]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("8_kxjkn")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=1480063980]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=767685031]
+offset_left = -167.0
+offset_right = 165.43158
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_kxjkn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("9_erp5q")
+theme_override_styles/pressed = ExtResource("10_8tq5h")
+theme_override_styles/hover = ExtResource("10_8tq5h")
+theme_override_styles/focus = ExtResource("10_8tq5h")
+text = "hahaha"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=785522501]
+libraries/ = SubResource("AnimationLibrary_3k0wu")
+
+[node name="Panel" type="Panel" parent="." unique_id=734814876]
+modulate = Color(1, 1, 1, 0)
+offset_left = -13.0
+offset_top = -9.0
+offset_right = 1291.0
+offset_bottom = 725.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxjkn")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=994132801]
+libraries/ = SubResource("AnimationLibrary_8tq5h")
+
+[connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
+[connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]
+[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]

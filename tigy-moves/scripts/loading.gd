@@ -34,6 +34,8 @@ func refresh_slots():
 
 func _on_load_1_pressed() -> void:
 	SaveManager.current_slot = 1
+	$AnimationPlayer2.play("fade out")
+	await $AnimationPlayer2.animation_finished
 	if FileAccess.file_exists("user://save_1.json"):
 		SaveManager.load_game(1)
 	else:
@@ -42,6 +44,8 @@ func _on_load_1_pressed() -> void:
 
 func _on_load_2_pressed() -> void:
 	SaveManager.current_slot = 2
+	$AnimationPlayer2.play("fade out")
+	await $AnimationPlayer2.animation_finished
 	if FileAccess.file_exists("user://save_2.json"):
 		SaveManager.load_game(2)
 	else:
@@ -50,6 +54,8 @@ func _on_load_2_pressed() -> void:
 
 func _on_load_3_pressed() -> void:
 	SaveManager.current_slot = 3
+	$AnimationPlayer2.play("fade out")
+	await $AnimationPlayer2.animation_finished
 	if FileAccess.file_exists("user://save_3.json"):
 		SaveManager.load_game(3)
 	else:

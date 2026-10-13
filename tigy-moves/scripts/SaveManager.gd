@@ -3,6 +3,9 @@ const SAVE_FOLDER = "user://"
 var current_slot = 0
 var speed: float = 0.05
 var introduction = false
+var room1 = false
+var sockMG = false
+var sMGtime: int = 0
 
 func save_game(slot: int) -> void:
 	var path = SAVE_FOLDER + "save_%d.json" % slot
@@ -10,6 +13,9 @@ func save_game(slot: int) -> void:
 	var data = {
 		"saved_at": Time.get_datetime_string_from_system(),
 		"introduction": introduction,
+		"room1": room1,
+		"sockMG": sockMG,
+		"sMGtime": sMGtime,
 	}
 
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -52,10 +58,13 @@ func load_game(slot: int):
 		return null
 	introduction = data.get("introduction", false)
 	speed = data.get("speed", 0.05)
-	
-	#if introduction:
-		#get_tree().change_scene_to_file()
-	if introduction == false:
+	if sockMG:
+		get_tree().change_scene_to_file("res://scenes/room2.tscn")
+	elif room1:
+		get_tree().change_scene_to_file("res://scenes/sockMG.tscn")
+	elif introduction:
+		get_tree().change_scene_to_file("res://scenes/room1.tscn")
+	elif introduction == false:
 		get_tree().change_scene_to_file("res://scenes/starting scene.tscn")
 	return data
 

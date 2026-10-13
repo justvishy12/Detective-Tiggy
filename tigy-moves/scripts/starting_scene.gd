@@ -100,8 +100,10 @@ func _input(event):
 func _on_you_pressed() -> void:
 	if dialogue_index == 4:
 		$AnimationPlayer.play("fade out")
-		SaveManager.introduction = true
-		SaveManager.save_game(SaveManager.current_slot)
+		await $AnimationPlayer.animation_finished
+		get_tree().change_scene_to_file("res://scenes/room1.tscn")
+		
+		
 	dialogue_index += 1
 	show_next_dialogue()
 	
