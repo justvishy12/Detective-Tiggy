@@ -237,6 +237,7 @@ offset_right = 1291.0
 offset_bottom = 725.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxjkn")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=994132801]
 libraries/ = SubResource("AnimationLibrary_8tq5h")

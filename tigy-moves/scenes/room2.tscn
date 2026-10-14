@@ -1,3 +1,219 @@
 [gd_scene format=3 uid="uid://3kjhredvbqqj"]
 
+[ext_resource type="Script" uid="uid://cntcfrfosp63t" path="res://scripts/room_2.gd" id="1_7xh3p"]
+[ext_resource type="Texture2D" uid="uid://cbgyd5ynta8xv" path="res://assets/scene bg/room1.png" id="1_s5pwh"]
+[ext_resource type="Texture2D" uid="uid://vk7rql0wekxn" path="res://assets/photo1anim.png" id="2_dbehi"]
+[ext_resource type="Texture2D" uid="uid://5qpu51hcxtwu" path="res://assets/Clean Basket.png" id="3_yfplu"]
+[ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="4_ucjjd"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="5_7xh3p"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="6_2robf"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="7_c7xmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_277jj"]
+atlas = ExtResource("2_dbehi")
+region = Rect2(0, 0, 181, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_actgu"]
+atlas = ExtResource("2_dbehi")
+region = Rect2(181, 0, 181, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ujy"]
+atlas = ExtResource("2_dbehi")
+region = Rect2(362, 0, 181, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duage"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_277jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_actgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54ujy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucjjd"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
+[sub_resource type="Animation" id="Animation_ytxec"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_22dcw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xh3p"]
+_data = {
+&"RESET": SubResource("Animation_ytxec"),
+&"fade out": SubResource("Animation_22dcw")
+}
+
 [node name="Node2D" type="Node2D" unique_id=1275514187]
+script = ExtResource("1_7xh3p")
+
+[node name="Room1" type="Sprite2D" parent="." unique_id=1733016830]
+position = Vector2(640, 360)
+texture = ExtResource("1_s5pwh")
+
+[node name="photo1" type="AnimatedSprite2D" parent="." unique_id=412049228]
+position = Vector2(838, 233)
+sprite_frames = SubResource("SpriteFrames_duage")
+speed_scale = 0.5
+
+[node name="photo1area" type="Area2D" parent="." unique_id=449642727]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="photo1area" unique_id=162814443]
+polygon = PackedVector2Array(759, 159, 926, 159, 927, 159, 914, 315, 751, 293)
+
+[node name="Panel" type="Panel" parent="." unique_id=1226392570]
+modulate = Color(1, 1, 1, 0)
+offset_left = -13.0
+offset_top = -9.0
+offset_right = 1291.0
+offset_bottom = 725.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ucjjd")
+metadata/_edit_use_anchors_ = true
+
+[node name="CleanBasket" type="Sprite2D" parent="." unique_id=1807800948]
+position = Vector2(503, 470.00003)
+rotation = -0.06806784
+texture = ExtResource("3_yfplu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=343002473]
+libraries/ = SubResource("AnimationLibrary_7xh3p")
+
+[node name="Textbox" type="Sprite2D" parent="." unique_id=703574181]
+visible = false
+position = Vector2(640, 632)
+scale = Vector2(0.73214287, 0.73214287)
+texture = ExtResource("4_ucjjd")
+
+[node name="namelabel" type="Label" parent="Textbox" unique_id=171003483]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Textbox" unique_id=1233402752]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Textbox" unique_id=1296761879]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Textbox" unique_id=1575190449]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="." unique_id=2140418926]
+visible = false
+offset_left = 473.0
+offset_top = 360.0
+offset_right = 805.4316
+offset_bottom = 447.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("6_2robf")
+theme_override_styles/pressed = ExtResource("7_c7xmq")
+theme_override_styles/hover = ExtResource("7_c7xmq")
+theme_override_styles/focus = ExtResource("7_c7xmq")
+text = "hahaha"
+
+[node name="kitchen" type="Button" parent="." unique_id=2049947058]
+modulate = Color(1, 1, 1, 0)
+offset_left = -23.0
+offset_top = 172.0
+offset_right = 284.0
+offset_bottom = 608.0
+
+[node name="room" type="Button" parent="." unique_id=209362559]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1040.0
+offset_top = 180.0
+offset_right = 1347.0
+offset_bottom = 616.0
+
+[node name="kitchen2" type="Node2D" parent="." unique_id=266449054]
+visible = false
+
+[node name="Panel2" type="Panel" parent="kitchen2" unique_id=2003301397]
+offset_left = -9.0
+offset_top = -14.0
+offset_right = 1306.0
+offset_bottom = 177.0
+
+[node name="Panel3" type="Panel" parent="kitchen2" unique_id=917578633]
+offset_left = -19.0
+offset_top = 601.0
+offset_right = 1296.0
+offset_bottom = 792.0
+
+[node name="Panel4" type="Panel" parent="kitchen2" unique_id=1356238213]
+offset_left = 266.0
+offset_top = 177.0
+offset_right = 1581.0
+offset_bottom = 601.0
+
+[node name="room2" type="Node2D" parent="." unique_id=925866174]
+
+[node name="Panel2" type="Panel" parent="room2" unique_id=2130234186]
+offset_left = -9.0
+offset_top = -14.0
+offset_right = 1306.0
+offset_bottom = 177.0
+
+[node name="Panel3" type="Panel" parent="room2" unique_id=873146408]
+offset_left = -19.0
+offset_top = 601.0
+offset_right = 1296.0
+offset_bottom = 792.0
+
+[node name="Panel4" type="Panel" parent="room2" unique_id=1558831136]
+offset_left = -261.0
+offset_top = 177.0
+offset_right = 1054.0
+offset_bottom = 601.0
+
+[connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
+[connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]

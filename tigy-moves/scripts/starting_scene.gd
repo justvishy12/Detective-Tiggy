@@ -1,4 +1,5 @@
 extends Node2D
+var played = false
 var skip_typing = false
 var dialogue = [
 	{
@@ -98,7 +99,8 @@ func _input(event):
 
 
 func _on_you_pressed() -> void:
-	if dialogue_index == 4:
+	if dialogue_index == 4 and played == false:
+		played = true
 		$AnimationPlayer.play("fade out")
 		await $AnimationPlayer.animation_finished
 		get_tree().change_scene_to_file("res://scenes/room1.tscn")

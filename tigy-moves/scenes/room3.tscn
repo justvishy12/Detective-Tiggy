@@ -1,0 +1,448 @@
+[gd_scene format=3 uid="uid://cfcagjo2vobig"]
+
+[ext_resource type="Texture2D" uid="uid://br6s748pbg1tk" path="res://assets/scene bg/room3.png" id="1_0xfje"]
+[ext_resource type="Script" uid="uid://bhd3x3ux72p0r" path="res://scripts/room_3.gd" id="1_iaiwk"]
+[ext_resource type="Texture2D" uid="uid://jolmkq7hgoig" path="res://assets/bottle-1.png" id="2_8wius"]
+[ext_resource type="Texture2D" uid="uid://bcnlgghewoivt" path="res://assets/bottle.png" id="3_dgrhu"]
+[ext_resource type="Texture2D" uid="uid://pnm3oexa843s" path="res://assets/bowls.png" id="4_o7801"]
+[ext_resource type="Texture2D" uid="uid://cdqqovq5kwu5q" path="res://assets/jar.png" id="5_w6rm3"]
+[ext_resource type="Texture2D" uid="uid://flcmisfsomn2" path="res://assets/mixer.png" id="6_iaiwk"]
+[ext_resource type="Texture2D" uid="uid://rn5flffcqe43" path="res://assets/M1.png" id="7_tj7kk"]
+[ext_resource type="Texture2D" uid="uid://dstn24avu00vm" path="res://assets/M2.png" id="8_rgicu"]
+[ext_resource type="Texture2D" uid="uid://31m5cfkorvlw" path="res://assets/M3.png" id="9_svdu2"]
+[ext_resource type="Texture2D" uid="uid://bks8i7qg7qr0" path="res://assets/M4.png" id="10_uywbr"]
+[ext_resource type="Texture2D" uid="uid://c0reshn1k8q7l" path="res://assets/M5.png" id="11_1g8rs"]
+[ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="12_o7801"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="13_w6rm3"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="14_iaiwk"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="15_tj7kk"]
+[ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="16_w6rm3"]
+
+[sub_resource type="Animation" id="Animation_ytxec"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_rgicu"]
+resource_name = "camerapan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.385, 1.385)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(813, 366)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/you:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -71), Vector2(-148, -82)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D/you:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.852054, 0.852054), Vector2(0.852054, 0.852054)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D/Textbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, 275.00003), Vector2(9, -37)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/Textbox:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.732, 0.732), Vector2(0.602, 0.602)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ammount:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iaiwk"]
+resource_name = "camerapan2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.385, 1.385), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(813, 366), Vector2(640, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/you:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-148, -82), Vector2(-88, -71)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D/you:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.852054, 0.852054), Vector2(0.852054, 0.852054)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D/Textbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9, -37), Vector2(53, 275.00003)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/Textbox:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.602, 0.602), Vector2(0.732, 0.732)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ammount:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.03333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_22dcw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svdu2"]
+_data = {
+&"RESET": SubResource("Animation_ytxec"),
+&"camerapan": SubResource("Animation_rgicu"),
+&"camerapan2": SubResource("Animation_iaiwk"),
+&"fade out": SubResource("Animation_22dcw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uywbr"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
+[node name="Node2D" type="Node2D" unique_id=1797133108]
+script = ExtResource("1_iaiwk")
+
+[node name="Room3" type="Sprite2D" parent="." unique_id=1617671797]
+position = Vector2(640, 360)
+texture = ExtResource("1_0xfje")
+
+[node name="M1" type="Sprite2D" parent="." unique_id=1324890374]
+position = Vector2(529, 179.00002)
+scale = Vector2(0.16831605, 0.38049215)
+texture = ExtResource("7_tj7kk")
+
+[node name="Button" type="Button" parent="M1" unique_id=92037634]
+modulate = Color(1, 1, 1, 0)
+offset_left = -106.94159
+offset_top = -36.794495
+offset_right = 121.64728
+offset_bottom = 34.16623
+
+[node name="M2" type="Sprite2D" parent="." unique_id=2087063789]
+position = Vector2(526.81195, 472)
+scale = Vector2(0.16831586, 0.38049215)
+texture = ExtResource("8_rgicu")
+
+[node name="Button2" type="Button" parent="M2" unique_id=91902464]
+modulate = Color(1, 1, 1, 0)
+offset_left = -117.70712
+offset_top = -36.794495
+offset_right = 119.94156
+offset_bottom = 36.794495
+
+[node name="M3" type="Sprite2D" parent="." unique_id=588580276]
+modulate = Color(0.43134022, 0.43134025, 0.43134025, 1)
+position = Vector2(687.18805, 524)
+scale = Vector2(0.17708819, 0.38049215)
+texture = ExtResource("9_svdu2")
+
+[node name="Button3" type="Button" parent="M3" unique_id=2059067727]
+modulate = Color(1, 1, 1, 0)
+offset_left = -119.64691
+offset_top = -36.794495
+offset_right = 118.00177
+offset_bottom = 36.794495
+
+[node name="M4" type="Sprite2D" parent="." unique_id=497686417]
+position = Vector2(1083.0001, 499.00003)
+scale = Vector2(0.38049215, 0.38049215)
+texture = ExtResource("10_uywbr")
+
+[node name="Button4" type="Button" parent="M4" unique_id=1602420435]
+modulate = Color(1, 1, 1, 0)
+offset_left = -118.26813
+offset_top = -36.794556
+offset_right = 119.380554
+offset_bottom = 36.794434
+
+[node name="M5" type="Sprite2D" parent="." unique_id=653218971]
+position = Vector2(1198, 172.99994)
+rotation = -0.9407325
+scale = Vector2(0.26001304, 0.38049215)
+texture = ExtResource("11_1g8rs")
+
+[node name="Button5" type="Button" parent="M5" unique_id=1687599781]
+modulate = Color(1, 1, 1, 0)
+offset_left = -126.18183
+offset_top = -37.9563
+offset_right = 111.46685
+offset_bottom = 35.63269
+
+[node name="Bottle1" type="Sprite2D" parent="." unique_id=305308407]
+position = Vector2(1096, 173)
+texture = ExtResource("2_8wius")
+
+[node name="Area3" type="Area2D" parent="Bottle1" unique_id=1384009631]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottle1/Area3" unique_id=2063950790]
+polygon = PackedVector2Array(-3, -30, -10, -22, -10, 29, 10, 30, 10, -23, 4, -30)
+
+[node name="Bottle" type="Sprite2D" parent="." unique_id=1793394198]
+position = Vector2(441, 177)
+texture = ExtResource("3_dgrhu")
+
+[node name="Area1" type="Area2D" parent="Bottle" unique_id=1926943863]
+position = Vector2(655, -4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottle/Area1" unique_id=826488290]
+polygon = PackedVector2Array(-655, -25, -662, -23, -664, -18, -669, -14, -672, -11, -673, -5, -668, -3, -664, 1, -663, 7, -666, 12, -671, 18, -668, 27, -665, 30, -654, 31, -643, 31, -638, 27, -636, 21, -636, 15, -637, 9, -639, 3, -642, -2, -642, -9, -639, -15, -642, -21)
+
+[node name="Bowls" type="Sprite2D" parent="." unique_id=1646976881]
+position = Vector2(1189, 193)
+texture = ExtResource("4_o7801")
+
+[node name="Jar" type="Sprite2D" parent="." unique_id=2081476537]
+position = Vector2(540, 175)
+texture = ExtResource("5_w6rm3")
+
+[node name="Area2" type="Area2D" parent="Jar" unique_id=2146543942]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jar/Area2" unique_id=1417230467]
+polygon = PackedVector2Array(-12, -26, -20, -21, -21, -12, -20, -4, -20, 6, -21, 18, -18, 27, -11, 30, 14, 30, 20, 24, 21, -21, 10, -30, -6, -32)
+
+[node name="Mixer" type="Sprite2D" parent="." unique_id=2129604002]
+position = Vector2(519, 464)
+texture = ExtResource("6_iaiwk")
+
+[node name="Area4" type="Area2D" parent="Mixer" unique_id=900366356]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mixer/Area4" unique_id=907445301]
+polygon = PackedVector2Array(-3, -33, -27, -24, -31, -13, -28, 3, -22, 21, -6, 30, 13, 29, 22, 18, 31, -3, 30, -20, 12, -32)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=197226172]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1180616318]
+position = Vector2(53, 275.00003)
+scale = Vector2(0.732, 0.732)
+texture = ExtResource("12_o7801")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=1607608318]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("13_w6rm3")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1871635843]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("13_w6rm3")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=197196799]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("13_w6rm3")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=52244205]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=696481134]
+visible = false
+offset_left = -88.0
+offset_top = -71.0
+offset_right = 244.43158
+offset_bottom = 16.0
+scale = Vector2(0.852054, 0.852054)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_w6rm3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("14_iaiwk")
+theme_override_styles/pressed = ExtResource("15_tj7kk")
+theme_override_styles/hover = ExtResource("15_tj7kk")
+theme_override_styles/focus = ExtResource("15_tj7kk")
+text = "hahaha"
+
+[node name="ammount" type="Label" parent="." unique_id=258104742]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1196.0
+offset_top = 109.0
+offset_right = 1273.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("13_w6rm3")
+theme_override_font_sizes/font_size = 48
+text = "0/5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1461202130]
+libraries/ = SubResource("AnimationLibrary_svdu2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1632806602]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 1297.0
+offset_bottom = 727.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uywbr")
+metadata/_edit_use_anchors_ = true
+
+[node name="DesertRecipe" type="Sprite2D" parent="." unique_id=1278888538]
+visible = false
+modulate = Color(1, 1, 1, 0.60784316)
+position = Vector2(739, 335)
+texture = ExtResource("16_w6rm3")
+
+[node name="door" type="Button" parent="." unique_id=1016464369]
+modulate = Color(1, 1, 1, 0)
+offset_left = -10.0
+offset_top = 181.0
+offset_right = 283.0
+offset_bottom = 727.0
+
+[connection signal="pressed" from="M1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="M2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="M3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="M4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="M5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="mouse_entered" from="Bottle1/Area3" to="." method="_on_area_3_mouse_entered"]
+[connection signal="mouse_exited" from="Bottle1/Area3" to="." method="_on_area_3_mouse_exited"]
+[connection signal="mouse_entered" from="Bottle/Area1" to="." method="_on_area_1_mouse_entered"]
+[connection signal="mouse_exited" from="Bottle/Area1" to="." method="_on_area_1_mouse_exited"]
+[connection signal="mouse_entered" from="Jar/Area2" to="." method="_on_area_2_mouse_entered"]
+[connection signal="mouse_exited" from="Jar/Area2" to="." method="_on_area_2_mouse_exited"]
+[connection signal="mouse_entered" from="Mixer/Area4" to="." method="_on_area_4_mouse_entered"]
+[connection signal="mouse_exited" from="Mixer/Area4" to="." method="_on_area_4_mouse_exited"]
+[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
+[connection signal="pressed" from="door" to="." method="_on_door_pressed"]
