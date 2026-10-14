@@ -76,9 +76,12 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
+	if dialogue_index == 1:
+		$kitchen2.visible = true
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat" and dialogue_index != 1 and dialogue_index != 2:
 			dialogue_index += 1
+			$kitchen.visible = true
 			show_next_dialogue()
 			
 	elif event.is_action_pressed("ui_accept") and typing:
@@ -99,7 +102,13 @@ func _on_you_pressed() -> void:
 	show_next_dialogue()
 	
 func _ready() -> void:
-	pass # Replace with function body.
+	$kitchen.visible = false
+	$room.visible = false
+	if SaveManager.kitchen == true:
+		$room2.visible = true
+		$room.visible = true
+		dialogue_index = 2
+	show_next_dialogue()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -113,3 +122,11 @@ func _on_photo_1_area_mouse_entered() -> void:
 
 func _on_photo_1_area_mouse_exited() -> void:
 	$photo1.stop()
+
+
+func _on_kitchen_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/room3.tscn")
+
+
+func _on_room_pressed() -> void:
+	pass # Replace with function body.

@@ -101,12 +101,12 @@ func show_cat_text(line) -> void:
 
 func _input(event):
 	if dialogue_index == 1 and played == false:
-		
+		played = true
 		$AnimationPlayer.play("camerapan")
 
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat":
-			if dialogue_index != 3 or dialogue_index != 4:
+			if dialogue_index != 3 and dialogue_index != 4:
 				dialogue_index += 1
 				show_next_dialogue()
 			elif dialogue_index == 3:
@@ -120,8 +120,6 @@ func _on_you_pressed() -> void:
 	if dialogue_index == 3:
 		$AnimationPlayer.play("fade out")
 		await $AnimationPlayer.animation_finished
-		SaveManager.room1 = true
-		SaveManager.save_game(SaveManager.current_slot)
 		get_tree().change_scene_to_file("res://scenes/sockMG.tscn")
 		
 		
@@ -148,6 +146,8 @@ func update_label():
 	elif recipie_pieces == 5:
 		$ammount.text = "5/5"
 		dialogue_index = 4
+		SaveManager.kitchen = true
+		SaveManager.save_game(SaveManager.current_slot)
 		show_next_dialogue()
 		$door.visible = true
 		$AnimationPlayer.play("camerapan2")

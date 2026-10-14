@@ -100,72 +100,13 @@ texture = ExtResource("3_yfplu")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=343002473]
 libraries/ = SubResource("AnimationLibrary_7xh3p")
 
-[node name="Textbox" type="Sprite2D" parent="." unique_id=703574181]
-visible = false
-position = Vector2(640, 632)
-scale = Vector2(0.73214287, 0.73214287)
-texture = ExtResource("4_ucjjd")
-
-[node name="namelabel" type="Label" parent="Textbox" unique_id=171003483]
-offset_left = -355.12192
-offset_top = -94.2439
-offset_right = -134.12192
-offset_bottom = -58.73169
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("5_7xh3p")
-theme_override_font_sizes/font_size = 32
-text = "Detective Tiggy"
-
-[node name="textlabel" type="Label" parent="Textbox" unique_id=1233402752]
-offset_left = -217.17072
-offset_top = -39.609756
-offset_right = 280.63885
-offset_bottom = 29.390244
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("5_7xh3p")
-theme_override_font_sizes/font_size = 32
-text = "Hey, what are you doing there, this is my detective area."
-autowrap_mode = 2
-
-[node name="skiplabel" type="Label" parent="Textbox" unique_id=1296761879]
-offset_left = 234.92682
-offset_top = 64.19512
-offset_right = 353.92682
-offset_bottom = 87.195114
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("5_7xh3p")
-theme_override_font_sizes/font_size = 16
-text = "SPACE TO SKIP  "
-
-[node name="photobox" type="TextureRect" parent="Textbox" unique_id=1575190449]
-offset_left = -367.41464
-offset_top = -46.439026
-offset_right = -230.82928
-offset_bottom = 71.02435
-expand_mode = 2
-stretch_mode = 4
-
-[node name="you" type="Button" parent="." unique_id=2140418926]
-visible = false
-offset_left = 473.0
-offset_top = 360.0
-offset_right = 805.4316
-offset_bottom = 447.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("5_7xh3p")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("6_2robf")
-theme_override_styles/pressed = ExtResource("7_c7xmq")
-theme_override_styles/hover = ExtResource("7_c7xmq")
-theme_override_styles/focus = ExtResource("7_c7xmq")
-text = "hahaha"
-
 [node name="kitchen" type="Button" parent="." unique_id=2049947058]
 modulate = Color(1, 1, 1, 0)
 offset_left = -23.0
 offset_top = 172.0
 offset_right = 284.0
 offset_bottom = 608.0
+mouse_default_cursor_shape = 2
 
 [node name="room" type="Button" parent="." unique_id=209362559]
 modulate = Color(1, 1, 1, 0)
@@ -173,6 +114,7 @@ offset_left = 1040.0
 offset_top = 180.0
 offset_right = 1347.0
 offset_bottom = 616.0
+mouse_default_cursor_shape = 2
 
 [node name="kitchen2" type="Node2D" parent="." unique_id=266449054]
 visible = false
@@ -196,6 +138,7 @@ offset_right = 1581.0
 offset_bottom = 601.0
 
 [node name="room2" type="Node2D" parent="." unique_id=925866174]
+visible = false
 
 [node name="Panel2" type="Panel" parent="room2" unique_id=2130234186]
 offset_left = -9.0
@@ -215,5 +158,69 @@ offset_top = 177.0
 offset_right = 1054.0
 offset_bottom = 601.0
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=941140516]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=703574181]
+visible = false
+position = Vector2(0, 272)
+scale = Vector2(0.73214287, 0.73214287)
+texture = ExtResource("4_ucjjd")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=171003483]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1233402752]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=1296761879]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=1575190449]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=2140418926]
+visible = false
+offset_left = -167.0
+offset_right = 165.43158
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_7xh3p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("6_2robf")
+theme_override_styles/pressed = ExtResource("7_c7xmq")
+theme_override_styles/hover = ExtResource("7_c7xmq")
+theme_override_styles/focus = ExtResource("7_c7xmq")
+text = "hahaha"
+
 [connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
 [connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]
+[connection signal="pressed" from="kitchen" to="." method="_on_kitchen_pressed"]
+[connection signal="pressed" from="room" to="." method="_on_room_pressed"]

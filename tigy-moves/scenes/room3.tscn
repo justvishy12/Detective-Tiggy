@@ -239,6 +239,7 @@ offset_left = -106.94159
 offset_top = -36.794495
 offset_right = 121.64728
 offset_bottom = 34.16623
+mouse_default_cursor_shape = 2
 
 [node name="M2" type="Sprite2D" parent="." unique_id=2087063789]
 position = Vector2(526.81195, 472)
@@ -251,6 +252,7 @@ offset_left = -117.70712
 offset_top = -36.794495
 offset_right = 119.94156
 offset_bottom = 36.794495
+mouse_default_cursor_shape = 2
 
 [node name="M3" type="Sprite2D" parent="." unique_id=588580276]
 modulate = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -264,6 +266,7 @@ offset_left = -119.64691
 offset_top = -36.794495
 offset_right = 118.00177
 offset_bottom = 36.794495
+mouse_default_cursor_shape = 2
 
 [node name="M4" type="Sprite2D" parent="." unique_id=497686417]
 position = Vector2(1083.0001, 499.00003)
@@ -276,6 +279,7 @@ offset_left = -118.26813
 offset_top = -36.794556
 offset_right = 119.380554
 offset_bottom = 36.794434
+mouse_default_cursor_shape = 2
 
 [node name="M5" type="Sprite2D" parent="." unique_id=653218971]
 position = Vector2(1198, 172.99994)
@@ -289,6 +293,7 @@ offset_left = -126.18183
 offset_top = -37.9563
 offset_right = 111.46685
 offset_bottom = 35.63269
+mouse_default_cursor_shape = 2
 
 [node name="Bottle1" type="Sprite2D" parent="." unique_id=305308407]
 position = Vector2(1096, 173)
@@ -385,6 +390,7 @@ offset_top = -71.0
 offset_right = 244.43158
 offset_bottom = 16.0
 scale = Vector2(0.852054, 0.852054)
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_w6rm3")
 theme_override_font_sizes/font_size = 32
@@ -430,6 +436,7 @@ offset_left = -10.0
 offset_top = 181.0
 offset_right = 283.0
 offset_bottom = 727.0
+mouse_default_cursor_shape = 2
 
 [connection signal="pressed" from="M1/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="M2/Button2" to="." method="_on_button_2_pressed"]
@@ -444,5 +451,7 @@ offset_bottom = 727.0
 [connection signal="mouse_exited" from="Jar/Area2" to="." method="_on_area_2_mouse_exited"]
 [connection signal="mouse_entered" from="Mixer/Area4" to="." method="_on_area_4_mouse_entered"]
 [connection signal="mouse_exited" from="Mixer/Area4" to="." method="_on_area_4_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/you" to="." method="_on_you_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/you" to="." method="_on_you_mouse_exited"]
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
 [connection signal="pressed" from="door" to="." method="_on_door_pressed"]

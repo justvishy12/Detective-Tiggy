@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://5vyxghu6mip7"]
+
+[ext_resource type="Script" uid="uid://bb2xombvi3a1g" path="res://scripts/room_4.gd" id="1_q6beh"]
+[ext_resource type="Texture2D" uid="uid://be1wl7r6qjbnl" path="res://assets/scene bg/room4.png" id="1_xadx6"]
+[ext_resource type="Texture2D" uid="uid://b61siv5wiuggk" path="res://assets/Book.png" id="2_eqdj1"]
+[ext_resource type="Texture2D" uid="uid://djexgh6c21jex" path="res://assets/cookie.png" id="3_7uxnh"]
+[ext_resource type="Texture2D" uid="uid://c77tlyvohkvl6" path="res://assets/cracker.png" id="4_1oq63"]
+[ext_resource type="Texture2D" uid="uid://d4a0demh67rnr" path="res://assets/fish cracker.png" id="5_rxuxh"]
+[ext_resource type="Texture2D" uid="uid://dld6hydlle6vs" path="res://assets/fish.png" id="6_5idlq"]
+[ext_resource type="Texture2D" uid="uid://clffenq7v2ab0" path="res://assets/Hat.png" id="7_2rspr"]
+[ext_resource type="Texture2D" uid="uid://dyg1bxkp868on" path="res://assets/Magnify  Glass.png" id="8_y5pfl"]
+[ext_resource type="Texture2D" uid="uid://b56oy0ebk4e4h" path="res://assets/milk.png" id="9_q6beh"]
+[ext_resource type="Texture2D" uid="uid://5r6yebn1gtbh" path="res://assets/shoe.png" id="10_rgl1u"]
+[ext_resource type="Texture2D" uid="uid://i4duyuxtmow7" path="res://assets/sock1.png" id="11_cikox"]
+[ext_resource type="Texture2D" uid="uid://c1ucd1ssgshde" path="res://assets/yarnball.png" id="12_cl5w0"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="13_y5pfl"]
+
+[node name="Node2D" type="Node2D" unique_id=1270154753]
+script = ExtResource("1_q6beh")
+
+[node name="Toys" type="Label" parent="." unique_id=1128822358]
+modulate = Color(1, 1, 1, 0)
+offset_left = 562.0
+offset_top = 276.0
+offset_right = 627.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("13_y5pfl")
+theme_override_font_sizes/font_size = 32
+text = "Toys"
+
+[node name="Gear" type="Label" parent="." unique_id=1234255152]
+modulate = Color(1, 1, 1, 0)
+offset_left = 760.0
+offset_top = 274.0
+offset_right = 829.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("13_y5pfl")
+theme_override_font_sizes/font_size = 32
+text = "Gear"
+
+[node name="Food" type="Label" parent="." unique_id=234071181]
+modulate = Color(1, 1, 1, 0)
+offset_left = 962.0
+offset_top = 275.0
+offset_right = 1029.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("13_y5pfl")
+theme_override_font_sizes/font_size = 32
+text = "Food"
+
+[node name="Interactive Items" type="Node2D" parent="." unique_id=2007422135]
+
+[node name="Room4" type="Sprite2D" parent="Interactive Items" unique_id=1447283724]
+position = Vector2(640, 360)
+texture = ExtResource("1_xadx6")
+
+[node name="Book" type="Sprite2D" parent="Interactive Items" unique_id=2137218788]
+position = Vector2(756, 485)
+scale = Vector2(0.50961536, 0.50961536)
+texture = ExtResource("2_eqdj1")
+
+[node name="Cookie" type="Sprite2D" parent="Interactive Items" unique_id=548062455]
+position = Vector2(929, 607)
+scale = Vector2(0.52409637, 0.52409637)
+texture = ExtResource("3_7uxnh")
+
+[node name="Cracker" type="Sprite2D" parent="Interactive Items" unique_id=704672001]
+position = Vector2(597, 624)
+scale = Vector2(0.4125, 0.4125)
+texture = ExtResource("4_1oq63")
+
+[node name="FishCracker" type="Sprite2D" parent="Interactive Items" unique_id=745908885]
+position = Vector2(911, 470)
+scale = Vector2(0.4440296, 0.4440296)
+texture = ExtResource("5_rxuxh")
+
+[node name="Fish" type="Sprite2D" parent="Interactive Items" unique_id=112770543]
+position = Vector2(556.00006, 479)
+scale = Vector2(0.59433967, 0.59433967)
+texture = ExtResource("6_5idlq")
+
+[node name="Hat" type="Sprite2D" parent="Interactive Items" unique_id=2078199380]
+position = Vector2(760, 652.00006)
+scale = Vector2(0.46808508, 0.4680851)
+texture = ExtResource("7_2rspr")
+
+[node name="MagnifyGlass" type="Sprite2D" parent="Interactive Items" unique_id=2122219463]
+position = Vector2(1120.0001, 556)
+scale = Vector2(0.41200033, 0.41200033)
+texture = ExtResource("8_y5pfl")
+
+[node name="Milk" type="Sprite2D" parent="Interactive Items" unique_id=607449312]
+position = Vector2(660, 536)
+scale = Vector2(0.46969652, 0.46969652)
+texture = ExtResource("9_q6beh")
+
+[node name="Shoe" type="Sprite2D" parent="Interactive Items" unique_id=2088176650]
+modulate = Color(0.48570347, 0.48570353, 0.48570347, 1)
+position = Vector2(1142.0001, 463.00003)
+scale = Vector2(0.34649116, 0.34649116)
+texture = ExtResource("10_rgl1u")
+
+[node name="Sock1" type="Sprite2D" parent="Interactive Items" unique_id=1096750475]
+modulate = Color(0.3019608, 0.5764706, 0.5764706, 1)
+position = Vector2(1018.9999, 482.99997)
+scale = Vector2(0.5793651, 0.5793651)
+texture = ExtResource("11_cikox")
+
+[node name="Yarnball" type="Sprite2D" parent="Interactive Items" unique_id=1005689691]
+modulate = Color(0.9999986, 0.3960434, 0.3433689, 1)
+position = Vector2(1035.0001, 655.00006)
+scale = Vector2(0.6805556, 0.6805556)
+texture = ExtResource("12_cl5w0")
+
+[node name="Yarnball2" type="Sprite2D" parent="Interactive Items" unique_id=1477918450]
+modulate = Color(0.5411765, 1, 1, 1)
+position = Vector2(830, 548)
+scale = Vector2(0.5925926, 0.5925926)
+texture = ExtResource("12_cl5w0")
+
+[node name="Button" type="Button" parent="." unique_id=575761351]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 1047.0
+offset_top = -9.0
+offset_right = 1284.0
+offset_bottom = 386.0
+mouse_default_cursor_shape = 2
