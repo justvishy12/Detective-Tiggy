@@ -9,3 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+
+func _on_restart_pressed() -> void:
+	for body in $Messy.get_children():
+		body.dragging = false
+		body.freeze = true
+		body.linear_velocity = Vector2.ZERO
+		body.angular_velocity = 0.0
+		body.global_position = body.start_position
+		body.gravity_scale = 0

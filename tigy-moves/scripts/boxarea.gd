@@ -14,8 +14,12 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		if types == body.type:
-			body.gravity_scale = 1
+			pass
 		else:
+			body.dragging = false
+			body.freeze = true
+			body.linear_velocity = Vector2.ZERO
+			body.angular_velocity = 0.0
 			body.global_position = body.start_position
 			$"..".wrong += 1
 			

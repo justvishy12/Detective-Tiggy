@@ -17,6 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="14_iaiwk"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="15_tj7kk"]
 [ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="16_w6rm3"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="17_tj7kk"]
 
 [sub_resource type="Animation" id="Animation_ytxec"]
 length = 0.001
@@ -402,11 +403,11 @@ text = "hahaha"
 
 [node name="ammount" type="Label" parent="." unique_id=258104742]
 modulate = Color(1, 1, 1, 0)
-offset_left = 1196.0
-offset_top = 109.0
-offset_right = 1273.0
-offset_bottom = 158.0
-theme_override_fonts/font = ExtResource("13_w6rm3")
+offset_left = 1194.0
+offset_top = 101.0
+offset_right = 1279.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("17_tj7kk")
 theme_override_font_sizes/font_size = 48
 text = "0/5"
 
