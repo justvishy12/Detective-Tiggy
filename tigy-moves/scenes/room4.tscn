@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b61siv5wiuggk" path="res://assets/Book.png" id="2_eqdj1"]
 [ext_resource type="Texture2D" uid="uid://djexgh6c21jex" path="res://assets/cookie.png" id="3_7uxnh"]
 [ext_resource type="Texture2D" uid="uid://c77tlyvohkvl6" path="res://assets/cracker.png" id="4_1oq63"]
+[ext_resource type="Script" uid="uid://dwibn7ssd2yag" path="res://scripts/rigidbody.gd" id="4_dhxj8"]
 [ext_resource type="Texture2D" uid="uid://d4a0demh67rnr" path="res://assets/fish cracker.png" id="5_rxuxh"]
 [ext_resource type="Texture2D" uid="uid://dld6hydlle6vs" path="res://assets/fish.png" id="6_5idlq"]
 [ext_resource type="Texture2D" uid="uid://clffenq7v2ab0" path="res://assets/Hat.png" id="7_2rspr"]
@@ -14,9 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://i4duyuxtmow7" path="res://assets/sock1.png" id="11_cikox"]
 [ext_resource type="Texture2D" uid="uid://c1ucd1ssgshde" path="res://assets/yarnball.png" id="12_cl5w0"]
 [ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="13_y5pfl"]
+[ext_resource type="Texture2D" uid="uid://jolmkq7hgoig" path="res://assets/bottle-1.png" id="15_cl5w0"]
+[ext_resource type="Texture2D" uid="uid://x4brs71esdp1" path="res://assets/GoldS.png" id="16_dhxj8"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="17_1ok7q"]
+[ext_resource type="Script" uid="uid://bgd6qyx1kn3df" path="res://scripts/boxarea.gd" id="19_1ok7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(98, 859)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
+size = Vector2(1458, 110)
 
 [node name="Node2D" type="Node2D" unique_id=1270154753]
 script = ExtResource("1_q6beh")
+
+[node name="Room4" type="Sprite2D" parent="." unique_id=1693048092]
+position = Vector2(640, 360)
+texture = ExtResource("1_xadx6")
 
 [node name="Toys" type="Label" parent="." unique_id=1128822358]
 modulate = Color(1, 1, 1, 0)
@@ -48,73 +63,302 @@ theme_override_fonts/font = ExtResource("13_y5pfl")
 theme_override_font_sizes/font_size = 32
 text = "Food"
 
-[node name="Interactive Items" type="Node2D" parent="." unique_id=2007422135]
+[node name="Messy" type="Node2D" parent="." unique_id=2007422135]
 
-[node name="Room4" type="Sprite2D" parent="Interactive Items" unique_id=1447283724]
-position = Vector2(640, 360)
-texture = ExtResource("1_xadx6")
+[node name="book" type="RigidBody2D" parent="Messy" unique_id=1339568228]
+position = Vector2(796, 616)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "gear"
 
-[node name="Book" type="Sprite2D" parent="Interactive Items" unique_id=2137218788]
-position = Vector2(756, 485)
+[node name="Book" type="Sprite2D" parent="Messy/book" unique_id=2137218788]
+position = Vector2(0, -0.99993896)
 scale = Vector2(0.50961536, 0.50961536)
 texture = ExtResource("2_eqdj1")
 
-[node name="Cookie" type="Sprite2D" parent="Interactive Items" unique_id=548062455]
-position = Vector2(929, 607)
-scale = Vector2(0.52409637, 0.52409637)
-texture = ExtResource("3_7uxnh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Messy/book" unique_id=1921170199]
+position = Vector2(-796, -616)
+polygon = PackedVector2Array(770, 606, 797, 643, 823, 623, 796, 588)
 
-[node name="Cracker" type="Sprite2D" parent="Interactive Items" unique_id=704672001]
-position = Vector2(597, 624)
-scale = Vector2(0.4125, 0.4125)
-texture = ExtResource("4_1oq63")
+[node name="Yarnball" type="RigidBody2D" parent="Messy" unique_id=986832855]
+position = Vector2(444, 487)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "toy"
 
-[node name="FishCracker" type="Sprite2D" parent="Interactive Items" unique_id=745908885]
-position = Vector2(911, 470)
-scale = Vector2(0.4440296, 0.4440296)
-texture = ExtResource("5_rxuxh")
+[node name="Yarnball2" type="Sprite2D" parent="Messy/Yarnball" unique_id=1477918450]
+modulate = Color(0.5411765, 1, 1, 1)
+scale = Vector2(0.5925926, 0.5925926)
+texture = ExtResource("12_cl5w0")
 
-[node name="Fish" type="Sprite2D" parent="Interactive Items" unique_id=112770543]
-position = Vector2(556.00006, 479)
-scale = Vector2(0.59433967, 0.59433967)
-texture = ExtResource("6_5idlq")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Messy/Yarnball" unique_id=828349378]
+position = Vector2(-444, -487)
+polygon = PackedVector2Array(433, 468, 443, 464, 460, 470, 466, 480, 466, 490, 463, 498, 458, 504, 446, 509, 434, 507, 423, 496, 420, 485, 425, 474)
 
-[node name="Hat" type="Sprite2D" parent="Interactive Items" unique_id=2078199380]
-position = Vector2(760, 652.00006)
-scale = Vector2(0.46808508, 0.4680851)
-texture = ExtResource("7_2rspr")
+[node name="yarnball" type="RigidBody2D" parent="Messy" unique_id=325968133]
+position = Vector2(1193, 675)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "toy"
 
-[node name="MagnifyGlass" type="Sprite2D" parent="Interactive Items" unique_id=2122219463]
-position = Vector2(1120.0001, 556)
-scale = Vector2(0.41200033, 0.41200033)
-texture = ExtResource("8_y5pfl")
-
-[node name="Milk" type="Sprite2D" parent="Interactive Items" unique_id=607449312]
-position = Vector2(660, 536)
-scale = Vector2(0.46969652, 0.46969652)
-texture = ExtResource("9_q6beh")
-
-[node name="Shoe" type="Sprite2D" parent="Interactive Items" unique_id=2088176650]
-modulate = Color(0.48570347, 0.48570353, 0.48570347, 1)
-position = Vector2(1142.0001, 463.00003)
-scale = Vector2(0.34649116, 0.34649116)
-texture = ExtResource("10_rgl1u")
-
-[node name="Sock1" type="Sprite2D" parent="Interactive Items" unique_id=1096750475]
-modulate = Color(0.3019608, 0.5764706, 0.5764706, 1)
-position = Vector2(1018.9999, 482.99997)
-scale = Vector2(0.5793651, 0.5793651)
-texture = ExtResource("11_cikox")
-
-[node name="Yarnball" type="Sprite2D" parent="Interactive Items" unique_id=1005689691]
+[node name="Yarnball3" type="Sprite2D" parent="Messy/yarnball" unique_id=1005689691]
 modulate = Color(0.9999986, 0.3960434, 0.3433689, 1)
-position = Vector2(1035.0001, 655.00006)
+position = Vector2(2, 1.000061)
 scale = Vector2(0.6805556, 0.6805556)
 texture = ExtResource("12_cl5w0")
 
-[node name="Yarnball2" type="Sprite2D" parent="Interactive Items" unique_id=1477918450]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Messy/yarnball" unique_id=1735905548]
+position = Vector2(-1193, -675)
+polygon = PackedVector2Array(1172, 664, 1182, 653, 1196, 649, 1209, 654, 1217, 660, 1221, 671, 1221, 684, 1218, 691, 1209, 698, 1193, 702, 1179, 699, 1170, 688, 1167, 675)
+
+[node name="sock" type="RigidBody2D" parent="Messy" unique_id=1721356789]
+position = Vector2(928, 513)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "toy"
+
+[node name="Sock1" type="Sprite2D" parent="Messy/sock" unique_id=1096750475]
+modulate = Color(0.3019608, 0.5764706, 0.5764706, 1)
+position = Vector2(-6, -1)
+scale = Vector2(0.5793651, 0.5793651)
+texture = ExtResource("11_cikox")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Messy/sock" unique_id=967960130]
+position = Vector2(-928, -513)
+polygon = PackedVector2Array(925, 489, 921, 503, 919, 515, 912, 518, 904, 519, 903, 527, 907, 534, 915, 537, 933, 533, 937, 525, 939, 518, 940, 508, 943, 497, 941, 490, 934, 485, 925, 485)
+
+[node name="shoe" type="RigidBody2D" parent="Messy" unique_id=172032917]
+position = Vector2(1235, 464)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "gear"
+
+[node name="Shoe" type="Sprite2D" parent="Messy/shoe" unique_id=2088176650]
+modulate = Color(0.48570347, 0.48570353, 0.48570347, 1)
+position = Vector2(0, -2)
+scale = Vector2(0.34649116, 0.34649116)
+texture = ExtResource("10_rgl1u")
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Messy/shoe" unique_id=1158047633]
+position = Vector2(-1235, -464)
+polygon = PackedVector2Array(1261, 460, 1262, 471, 1259, 477, 1246, 476, 1230, 474, 1207, 468, 1204, 461, 1204, 457, 1211, 455, 1227, 454, 1238, 451, 1253, 450)
+
+[node name="milk" type="RigidBody2D" parent="Messy" unique_id=1173064825]
+position = Vector2(441, 625)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "food"
+
+[node name="Milk" type="Sprite2D" parent="Messy/milk" unique_id=607449312]
+position = Vector2(-0.9999695, 0)
+scale = Vector2(0.46969652, 0.46969652)
+texture = ExtResource("9_q6beh")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Messy/milk" unique_id=401749935]
+position = Vector2(-441, -625)
+polygon = PackedVector2Array(423, 596, 424, 654, 454, 653, 456, 655, 456, 594)
+
+[node name="hat" type="RigidBody2D" parent="Messy" unique_id=1469442834]
+position = Vector2(248, 282)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "gear"
+
+[node name="Hat" type="Sprite2D" parent="Messy/hat" unique_id=2078199380]
+position = Vector2(0, 1.0000916)
+scale = Vector2(0.46808508, 0.4680851)
+texture = ExtResource("7_2rspr")
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Messy/hat" unique_id=1468812411]
+position = Vector2(-248, -282)
+polygon = PackedVector2Array(221, 292, 202, 295, 198, 298, 213, 305, 286, 304, 299, 297, 276, 292, 274, 260, 224, 260, 221, 264)
+
+[node name="magnify" type="RigidBody2D" parent="Messy" unique_id=1204227689]
+position = Vector2(1071, 565)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "gear"
+
+[node name="MagnifyGlass" type="Sprite2D" parent="Messy/magnify" unique_id=2122219463]
+position = Vector2(-0.9998779, 2.000061)
+scale = Vector2(0.41200033, 0.41200033)
+texture = ExtResource("8_y5pfl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Messy/magnify" unique_id=1286687003]
+position = Vector2(-1071, -565)
+polygon = PackedVector2Array(1079, 566, 1095, 577, 1090, 586, 1073, 574, 1055, 576, 1049, 569, 1047, 553, 1054, 547, 1067, 543, 1079, 551, 1080, 559)
+
+[node name="fish" type="RigidBody2D" parent="Messy" unique_id=550156546]
+position = Vector2(239, 427)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "toy"
+
+[node name="Fish" type="Sprite2D" parent="Messy/fish" unique_id=112770543]
+position = Vector2(3.0000916, 0)
+scale = Vector2(0.59433967, 0.59433967)
+texture = ExtResource("6_5idlq")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Messy/fish" unique_id=1683165556]
+position = Vector2(-239, -427)
+polygon = PackedVector2Array(250, 408, 235, 415, 220, 417, 215, 420, 217, 426, 225, 430, 229, 445, 233, 447, 242, 446, 244, 436, 249, 438, 253, 448, 260, 451, 262, 448, 258, 440, 260, 436, 267, 433, 272, 429, 265, 426, 257, 427, 253, 429, 246, 423, 253, 419, 254, 415, 254, 408, 252, 407)
+
+[node name="fishy" type="RigidBody2D" parent="Messy" unique_id=457447594]
+position = Vector2(634, 495)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "food"
+
+[node name="FishCracker" type="Sprite2D" parent="Messy/fishy" unique_id=745908885]
+position = Vector2(4, 0)
+scale = Vector2(0.4440296, 0.4440296)
+texture = ExtResource("5_rxuxh")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Messy/fishy" unique_id=1532030801]
+position = Vector2(-634, -495)
+polygon = PackedVector2Array(627, 485, 615, 483, 609, 485, 607, 487, 615, 493, 621, 496, 625, 506, 630, 509, 632, 511, 633, 507, 639, 511, 640, 503, 645, 504, 649, 504, 653, 513, 658, 516, 662, 517, 658, 507, 663, 503, 668, 502, 670, 501, 665, 498, 659, 498, 651, 499, 643, 492, 648, 489, 649, 487, 647, 484, 648, 480, 643, 480)
+
+[node name="cracker" type="RigidBody2D" parent="Messy" unique_id=1621747437]
+position = Vector2(56, 666)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "food"
+
+[node name="Cracker" type="Sprite2D" parent="Messy/cracker" unique_id=704672001]
+position = Vector2(1.000061, -1)
+scale = Vector2(0.4125, 0.4125)
+texture = ExtResource("4_1oq63")
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Messy/cracker" unique_id=822925073]
+position = Vector2(-56, -666)
+polygon = PackedVector2Array(29, 649, 86, 649, 86, 681, 29, 683)
+
+[node name="cookie" type="RigidBody2D" parent="Messy" unique_id=1564747940]
+position = Vector2(56, 431)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "food"
+
+[node name="Cookie" type="Sprite2D" parent="Messy/cookie" unique_id=548062455]
+modulate = Color(0.65012825, 0.6501283, 0.65012825, 1)
+position = Vector2(1, -2)
+scale = Vector2(0.52409637, 0.52409637)
+texture = ExtResource("3_7uxnh")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Messy/cookie" unique_id=287428388]
+position = Vector2(-56, -431)
+polygon = PackedVector2Array(53, 406, 35, 411, 32, 419, 34, 450, 58, 451, 75, 451, 81, 447, 82, 438, 81, 412, 74, 408, 60, 406)
+
+[node name="star" type="RigidBody2D" parent="Messy" unique_id=1570905353]
+position = Vector2(629, 672)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "toy"
+
+[node name="GoldS" type="Sprite2D" parent="Messy/star" unique_id=231163955]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-6.1035156e-05, -2)
+scale = Vector2(0.35585585, 0.36)
+texture = ExtResource("16_dhxj8")
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Messy/star" unique_id=1891133645]
+position = Vector2(-629, -672)
+polygon = PackedVector2Array(622, 663, 627, 651, 630, 651, 634, 660, 635, 663, 648, 664, 650, 667, 640, 674, 643, 686, 642, 689, 630, 683, 620, 688, 616, 688, 615, 686, 618, 675, 609, 668, 609, 664)
+
+[node name="bottle" type="RigidBody2D" parent="Messy" unique_id=969378953]
+position = Vector2(1025, 677)
+input_pickable = true
+mass = 15.0
+script = ExtResource("4_dhxj8")
+type = "food"
+
+[node name="Bottle1" type="Sprite2D" parent="Messy/bottle" unique_id=963209506]
+position = Vector2(-2, -1)
+rotation = -1.0751228
+texture = ExtResource("15_cl5w0")
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Messy/bottle" unique_id=157000713]
+position = Vector2(-1025, -677)
+polygon = PackedVector2Array(1052, 684, 1053, 679, 1007, 656, 1004, 657, 998, 657, 994, 664, 997, 671, 999, 676, 1045, 699, 1050, 689)
+
+[node name="Clean" type="Node2D" parent="." unique_id=1494579057]
+visible = false
+
+[node name="Book" type="Sprite2D" parent="Clean" unique_id=1750992879]
+position = Vector2(766.00006, 406)
+scale = Vector2(0.50961536, 0.50961536)
+texture = ExtResource("2_eqdj1")
+
+[node name="Cookie" type="Sprite2D" parent="Clean" unique_id=1120965211]
+position = Vector2(967.99994, 403)
+scale = Vector2(0.52409637, 0.52409637)
+texture = ExtResource("3_7uxnh")
+
+[node name="Cracker" type="Sprite2D" parent="Clean" unique_id=70879955]
+position = Vector2(981.00006, 363)
+scale = Vector2(0.4125, 0.4125)
+texture = ExtResource("4_1oq63")
+
+[node name="FishCracker" type="Sprite2D" parent="Clean" unique_id=1196798570]
+position = Vector2(1022, 393)
+scale = Vector2(0.4440296, 0.4440296)
+texture = ExtResource("5_rxuxh")
+
+[node name="Fish" type="Sprite2D" parent="Clean" unique_id=1482296479]
+position = Vector2(568.00006, 410)
+scale = Vector2(0.59433967, 0.59433967)
+texture = ExtResource("6_5idlq")
+
+[node name="Hat" type="Sprite2D" parent="Clean" unique_id=1029874075]
+position = Vector2(798, 375.00006)
+rotation = 0.26005405
+scale = Vector2(0.46808508, 0.4680851)
+texture = ExtResource("7_2rspr")
+
+[node name="MagnifyGlass" type="Sprite2D" parent="Clean" unique_id=1331563085]
+position = Vector2(797.00006, 341.00003)
+scale = Vector2(0.41200033, 0.41200033)
+texture = ExtResource("8_y5pfl")
+
+[node name="Milk" type="Sprite2D" parent="Clean" unique_id=977907421]
+position = Vector2(1032, 344)
+scale = Vector2(0.46969652, 0.46969652)
+texture = ExtResource("9_q6beh")
+
+[node name="Shoe" type="Sprite2D" parent="Clean" unique_id=585790505]
+modulate = Color(0.48570347, 0.48570353, 0.48570347, 1)
+position = Vector2(824, 414)
+scale = Vector2(0.34649116, 0.34649116)
+texture = ExtResource("10_rgl1u")
+
+[node name="Sock1" type="Sprite2D" parent="Clean" unique_id=708972103]
+modulate = Color(0.3019608, 0.5764706, 0.5764706, 1)
+position = Vector2(599.99994, 385.99997)
+scale = Vector2(0.5793651, 0.5793651)
+texture = ExtResource("11_cikox")
+
+[node name="Yarnball" type="Sprite2D" parent="Clean" unique_id=947302407]
+modulate = Color(0.9999986, 0.3960434, 0.3433689, 1)
+position = Vector2(568, 368.00006)
+scale = Vector2(0.6805556, 0.6805556)
+texture = ExtResource("12_cl5w0")
+
+[node name="Yarnball2" type="Sprite2D" parent="Clean" unique_id=601140573]
 modulate = Color(0.5411765, 1, 1, 1)
-position = Vector2(830, 548)
+position = Vector2(633, 409)
 scale = Vector2(0.5925926, 0.5925926)
 texture = ExtResource("12_cl5w0")
 
@@ -126,3 +370,106 @@ offset_top = -9.0
 offset_right = 1284.0
 offset_bottom = 386.0
 mouse_default_cursor_shape = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1298968412]
+
+[node name="Label" type="Label" parent="." unique_id=763360918]
+offset_left = 1158.0
+offset_top = 4.0
+offset_right = 1261.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("17_1ok7q")
+theme_override_font_sizes/font_size = 48
+text = "0/14"
+
+[node name="Panel" type="Panel" parent="." unique_id=191827838]
+modulate = Color(1, 1, 1, 0)
+offset_left = 521.0
+offset_top = 218.0
+offset_right = 678.0
+offset_bottom = 447.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=1901373853]
+modulate = Color(1, 1, 1, 0)
+offset_left = 708.0
+offset_top = 218.0
+offset_right = 882.0
+offset_bottom = 447.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=433315121]
+modulate = Color(1, 1, 1, 0)
+offset_left = 911.0
+offset_top = 216.0
+offset_right = 1073.0
+offset_bottom = 447.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1558514578]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1593345391]
+polygon = PackedVector2Array(491, 235, 524, 302, 524, 447, 669, 447, 669, 301, 694, 224, 655, 302, 655, 432, 539, 432, 538, 302)
+disabled = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=724221060]
+position = Vector2(197, 0)
+polygon = PackedVector2Array(498, 226, 524, 302, 524, 447, 669, 447, 669, 351, 669, 301, 695, 223, 655, 302, 655, 432, 539, 432, 538, 302)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1205792007]
+position = Vector2(395, 0)
+polygon = PackedVector2Array(497, 227, 524, 302, 524, 447, 669, 447, 669, 351, 669, 301, 698, 225, 655, 302, 655, 432, 539, 432, 538, 302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1958942531]
+position = Vector2(-39, 391)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1077802790]
+position = Vector2(1318, 395.5)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1322400732]
+position = Vector2(637, 768)
+shape = SubResource("RectangleShape2D_0kpj8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1055128466]
+position = Vector2(636, -10)
+shape = SubResource("RectangleShape2D_0kpj8")
+
+[node name="toysA" type="Area2D" parent="." unique_id=826894025]
+script = ExtResource("19_1ok7q")
+types = "toy"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="toysA" unique_id=234994260]
+polygon = PackedVector2Array(495, 234, 522, 105, 662, 111, 687, 227, 655, 296, 652, 300, 653, 431, 540, 430, 540, 294)
+
+[node name="gearA" type="Area2D" parent="." unique_id=517626662]
+script = ExtResource("19_1ok7q")
+types = "gear"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="gearA" unique_id=90849922]
+position = Vector2(197, 0)
+polygon = PackedVector2Array(501, 224, 522, 105, 662, 111, 689, 225, 655, 296, 652, 300, 653, 431, 540, 430, 540, 294)
+
+[node name="foodA" type="Area2D" parent="." unique_id=1917699781]
+script = ExtResource("19_1ok7q")
+types = "food"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="foodA" unique_id=1688012475]
+position = Vector2(395, 0)
+polygon = PackedVector2Array(499, 225, 522, 105, 662, 111, 693, 225, 655, 296, 652, 300, 653, 431, 540, 430, 540, 294)
+
+[connection signal="input_event" from="Messy/book" to="Messy/book" method="_on_input_event"]
+[connection signal="input_event" from="Messy/Yarnball" to="Messy/Yarnball" method="_on_input_event"]
+[connection signal="input_event" from="Messy/yarnball" to="Messy/yarnball" method="_on_input_event"]
+[connection signal="input_event" from="Messy/sock" to="Messy/sock" method="_on_input_event"]
+[connection signal="input_event" from="Messy/shoe" to="Messy/shoe" method="_on_input_event"]
+[connection signal="input_event" from="Messy/milk" to="Messy/milk" method="_on_input_event"]
+[connection signal="input_event" from="Messy/hat" to="Messy/hat" method="_on_input_event"]
+[connection signal="input_event" from="Messy/magnify" to="Messy/magnify" method="_on_input_event"]
+[connection signal="input_event" from="Messy/fish" to="Messy/fish" method="_on_input_event"]
+[connection signal="input_event" from="Messy/fishy" to="Messy/fishy" method="_on_input_event"]
+[connection signal="input_event" from="Messy/cracker" to="Messy/cracker" method="_on_input_event"]
+[connection signal="input_event" from="Messy/cookie" to="Messy/cookie" method="_on_input_event"]
+[connection signal="input_event" from="Messy/star" to="Messy/star" method="_on_input_event"]
+[connection signal="input_event" from="Messy/bottle" to="Messy/bottle" method="_on_input_event"]
+[connection signal="body_entered" from="toysA" to="toysA" method="_on_body_entered"]
+[connection signal="body_entered" from="gearA" to="gearA" method="_on_body_entered"]
+[connection signal="body_entered" from="foodA" to="foodA" method="_on_body_entered"]
