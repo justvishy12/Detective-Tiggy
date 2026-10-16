@@ -230,12 +230,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if a1[1] == a2[1] and a2[1] == a3[1] and a3[1] == a4[1]:
 		A = true
-	if b1[1] == b2[1] and b2[1] == b3[1] and a3[1] == b4[1]:
+	else:
+		A = false
+	if b1[1] == b2[1] and b2[1] == b3[1] and b3[1] == b4[1]:
 		B = true
+	else:
+		B = false
 	if c1[1] == c2[1] and c2[1] == c3[1] and c3[1] == c4[1]:
 		C = true
+	else:
+		C = false
 	if d1[1] == d2[1] and d2[1] == d3[1] and d3[1] == d4[1]:
 		D = true
+	else:
+		D = false
 	if A and B and C and D and end == false:
 		end = true
 		elapsed_time = (Time.get_ticks_msec() - start_time) / 1000
@@ -245,7 +253,7 @@ func _process(delta: float) -> void:
 		$stars.visible = true
 		var tween1 = create_tween()
 		tween1.tween_property($stars, "modulate:a", 1.0, 1.0)
-		if elapsed_time < 30:
+		if elapsed_time < 35:
 			$stars/Star1.modulate.a = 0.0
 			var tween2 = create_tween()
 			tween2.tween_property($stars/Star1, "modulate:a", 1.0, 1.0)
@@ -961,7 +969,7 @@ func _on_b_3_button_up() -> void:
 			b3[1] = "E"
 			a1[0].position = a1_pos
 		else :
-			b3[0].position = b1_pos
+			b3[0].position = b3_pos
 	elif b3[0].get_node("MoveablePanel").get_global_rect().intersects($Row3.get_global_rect()):
 		if c4[0] == $Empty:
 			c4[0] = b3[0]
@@ -988,7 +996,7 @@ func _on_b_3_button_up() -> void:
 			b3[1] = "E"
 			c1[0].position = c1_pos
 		else :
-			b3[0].position = b1_pos
+			b3[0].position = b3_pos
 	elif b3[0].get_node("MoveablePanel").get_global_rect().intersects($Row4.get_global_rect()):
 		if d4[0] == $Empty:
 			d4[0] = b3[0]

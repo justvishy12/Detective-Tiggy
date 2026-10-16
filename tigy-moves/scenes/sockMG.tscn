@@ -462,42 +462,37 @@ text = "hahaha"
 libraries/ = SubResource("AnimationLibrary_xnpxu")
 
 [node name="stars" type="Node2D" parent="." unique_id=1672862544]
-visible = false
 
 [node name="GreyS" type="Sprite2D" parent="stars" unique_id=32234220]
-position = Vector2(389.86053, 420.56314)
-rotation = 0.6719518
+position = Vector2(415.86053, 134.56314)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("12_is14f")
 
 [node name="Star1" type="Sprite2D" parent="stars" unique_id=1348208705]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(389.86053, 420.56314)
-rotation = 0.6719518
+position = Vector2(415.86053, 134.56314)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("11_146xa")
 
-[node name="GreyS3" type="Sprite2D" parent="stars" unique_id=2090598407]
-position = Vector2(925.86053, 420.56314)
-rotation = 0.6719518
+[node name="GreyS3" type="Sprite2D" parent="stars" unique_id=450697240]
+position = Vector2(871.86053, 134.56314)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("12_is14f")
 
-[node name="Star3" type="Sprite2D" parent="stars" unique_id=1126715728]
+[node name="Star3" type="Sprite2D" parent="stars" unique_id=1279664633]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(925.86053, 420.56314)
-rotation = 0.6719518
+position = Vector2(871.86053, 134.56314)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("11_146xa")
 
 [node name="GreyS2" type="Sprite2D" parent="stars" unique_id=672866048]
-position = Vector2(641.776, 337.6721)
+position = Vector2(641.776, 105.67209)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("12_is14f")
 
 [node name="Star2" type="Sprite2D" parent="stars" unique_id=2035074602]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(641.776, 337.6721)
+position = Vector2(641.776, 105.67209)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("11_146xa")
 

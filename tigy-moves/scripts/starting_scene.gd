@@ -19,7 +19,7 @@ var dialogue = [
 		#2
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Well, I am Detective Tiggy, I solve mysterys, and since you explore, you will be Traveler! ",
+		"text": "Well, I am Detective Tiggy, I solve mysteries, and since you explore, you will be Traveler! ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{

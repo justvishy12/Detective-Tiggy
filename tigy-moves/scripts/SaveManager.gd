@@ -6,7 +6,9 @@ var introduction = false
 var room1 = false
 var sockMG = false
 var kitchen = false
+var room4 = false
 var sMGtime: int = 0
+var rMGtime: int = 0
 
 func save_game(slot: int) -> void:
 	var path = SAVE_FOLDER + "save_%d.json" % slot
@@ -18,6 +20,8 @@ func save_game(slot: int) -> void:
 		"sockMG": sockMG,
 		"sMGtime": sMGtime,
 		"kitchen": kitchen,
+		"room4": room4,
+		"rMGtime": rMGtime,
 	}
 
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -60,7 +64,9 @@ func load_game(slot: int):
 		return null
 	introduction = data.get("introduction", false)
 	speed = data.get("speed", 0.05)
-	if kitchen:
+	if room4:
+		get_tree().change_scene_to_file("res://scenes/zen garden.tscn")
+	elif kitchen:
 		get_tree().change_scene_to_file("res://scenes/room2.tscn")
 	elif sockMG:
 		get_tree().change_scene_to_file("res://scenes/room2.tscn")

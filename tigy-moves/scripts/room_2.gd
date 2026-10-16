@@ -14,7 +14,7 @@ var dialogue = [
 		#1
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Lets go into the kitchen (travel by clicking doors) ",
+		"text": "Lets go into the kitchen (travel by clicking doors only when directed). ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{
@@ -129,4 +129,4 @@ func _on_kitchen_pressed() -> void:
 
 
 func _on_room_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/room4.tscn")

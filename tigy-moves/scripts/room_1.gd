@@ -7,7 +7,7 @@ var dialogue = [
 		#0
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Welcome in, this is my house, as you see its very organize- WHAT IS THAT! ",
+		"text": "Welcome in, this is my house, as you see its very organiz- WHAT IS THAT! ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{

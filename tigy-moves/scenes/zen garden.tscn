@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bn6d5b1fnb154"]
+
+[ext_resource type="Script" uid="uid://bs2co5fknw6hu" path="res://scripts/zen_garden.gd" id="1_00134"]
+
+[node name="Node2D" type="Node2D" unique_id=385739354]
+script = ExtResource("1_00134")
