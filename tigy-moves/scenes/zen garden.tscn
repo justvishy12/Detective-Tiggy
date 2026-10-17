@@ -1,6 +1,327 @@
 [gd_scene format=3 uid="uid://bn6d5b1fnb154"]
 
 [ext_resource type="Script" uid="uid://bs2co5fknw6hu" path="res://scripts/zen_garden.gd" id="1_00134"]
+[ext_resource type="Texture2D" uid="uid://c67qyk5xd2jun" path="res://assets/scene bg/Zen Garden.png" id="2_0l7ji"]
+[ext_resource type="Texture2D" uid="uid://0fumygayi57w" path="res://assets/hole.png" id="3_bsv7v"]
+[ext_resource type="Texture2D" uid="uid://ccxmch1ft1pg5" path="res://assets/M6.png" id="4_kmkhr"]
+[ext_resource type="Texture2D" uid="uid://dat53bg0sdtlt" path="res://assets/Shovel.png" id="5_lestv"]
+[ext_resource type="Texture2D" uid="uid://dbrwvhrdmgw5i" path="res://assets/Tusky.png" id="6_6yti8"]
+[ext_resource type="Texture2D" uid="uid://dffaqu80uvgjx" path="res://assets/TuskyBack.png" id="7_vab3i"]
+[ext_resource type="Texture2D" uid="uid://c568u6tvrafmh" path="res://assets/Tiggy.png" id="8_x4nyo"]
+[ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="9_0ekio"]
+[ext_resource type="Texture2D" uid="uid://byvw2eap704ft" path="res://assets/Shoe2.png" id="9_bsv7v"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="10_yb5sq"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="11_n6qjw"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_ubfgq"]
+[ext_resource type="Texture2D" uid="uid://clffenq7v2ab0" path="res://assets/Hat.png" id="14_kmkhr"]
+
+[sub_resource type="Animation" id="Animation_kmkhr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_lestv"]
+resource_name = "digging"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shovel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.37, 0.66, 1.08),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1138, 540), Vector2(1100, 552), Vector2(1083, 527), Vector2(1140, 525.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.38, 0.67),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.84203666, 1.0035644, 1.2374384]
+}
+
+[sub_resource type="Animation" id="Animation_x4nyo"]
+resource_name = "grab_tusky"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tusky:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2.1333334, 2.6666667, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1021.0001, 491), Vector2(1021.0001, 491), Vector2(774.2501, 507.91254), Vector2(529, 545), Vector2(421.00006, 529.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tiggy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5, 2.1333334, 2.6666667, 2.9566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(283, 488), Vector2(514, 442.00003), Vector2(933, 463), Vector2(686.25, 479.91254), Vector2(449, 494), Vector2(356.00003, 488)]
+}
+
+[sub_resource type="Animation" id="Animation_vab3i"]
+resource_name = "tusky move"
+length = 0.82
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tusky:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1109, 500), Vector2(1080.0001, 489), Vector2(1021.0001, 491)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shovel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.76),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1138, 540), Vector2(1184.9999, 562), Vector2(1222, 584)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shovel:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5166175, 0.7454859, 0.98522365]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TuskyBack:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Tusky:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6yti8"]
+resource_name = "tusky turn"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TuskyBack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.47),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1113, 514), Vector2(1125, 507), Vector2(1118, 488.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TuskyBack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tusky:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tusky:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.67, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1117.0001, 491), Vector2(1126, 500), Vector2(1109, 500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vab3i"]
+_data = {
+&"RESET": SubResource("Animation_kmkhr"),
+&"digging": SubResource("Animation_lestv"),
+&"grab_tusky": SubResource("Animation_x4nyo"),
+&"tusky move": SubResource("Animation_vab3i"),
+&"tusky turn": SubResource("Animation_6yti8")
+}
 
 [node name="Node2D" type="Node2D" unique_id=385739354]
 script = ExtResource("1_00134")
+
+[node name="ZenGarden" type="Sprite2D" parent="." unique_id=54778663]
+position = Vector2(640, 360)
+texture = ExtResource("2_0l7ji")
+
+[node name="Shovel" type="Sprite2D" parent="." unique_id=270028069]
+position = Vector2(1138, 540)
+rotation = 0.5166175
+texture = ExtResource("5_lestv")
+
+[node name="Tiggy" type="Sprite2D" parent="." unique_id=733082312]
+position = Vector2(283, 488)
+scale = Vector2(0.7547529, 0.7547529)
+texture = ExtResource("8_x4nyo")
+
+[node name="Hat" type="Sprite2D" parent="Tiggy" unique_id=1310498786]
+position = Vector2(-55.64734, -184.16623)
+rotation = -0.22018175
+scale = Vector2(1.0494993, 1.0494993)
+texture = ExtResource("14_kmkhr")
+
+[node name="Tusky" type="Sprite2D" parent="." unique_id=574504594]
+visible = false
+position = Vector2(1021.0001, 491)
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("6_6yti8")
+
+[node name="TuskyBack" type="Sprite2D" parent="." unique_id=692283184]
+position = Vector2(1113, 514)
+scale = Vector2(0.7851406, 0.7851406)
+texture = ExtResource("7_vab3i")
+
+[node name="close items" type="Panel" parent="." unique_id=1286329152]
+visible = false
+offset_left = -24.0
+offset_top = -19.0
+offset_right = 1310.0
+offset_bottom = 743.0
+
+[node name="Hole" type="Sprite2D" parent="close items" unique_id=1673898502]
+position = Vector2(664.96436, 415.75)
+scale = Vector2(1.5857146, 1.5857143)
+texture = ExtResource("3_bsv7v")
+
+[node name="M6" type="Sprite2D" parent="close items" unique_id=117421338]
+position = Vector2(729.96436, 442.75)
+scale = Vector2(0.6029411, 0.60294116)
+texture = ExtResource("4_kmkhr")
+
+[node name="Shoe2" type="Sprite2D" parent="close items" unique_id=757919167]
+position = Vector2(573.96436, 401.75)
+scale = Vector2(1.4318185, 1.4318185)
+texture = ExtResource("9_bsv7v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=837012460]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=300719862]
+position = Vector2(48, 232.00003)
+scale = Vector2(0.732, 0.732)
+texture = ExtResource("9_0ekio")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=616826456]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("10_yb5sq")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=550217148]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("10_yb5sq")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=1390395435]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("10_yb5sq")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=214395753]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=610571166]
+visible = false
+offset_left = -104.0
+offset_top = -64.0
+offset_right = 228.43158
+offset_bottom = 23.0
+scale = Vector2(0.852054, 0.852054)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_yb5sq")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("11_n6qjw")
+theme_override_styles/pressed = ExtResource("12_ubfgq")
+theme_override_styles/hover = ExtResource("12_ubfgq")
+theme_override_styles/focus = ExtResource("12_ubfgq")
+text = "I don't know, but they are digging!"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=437844803]
+libraries/ = SubResource("AnimationLibrary_vab3i")
+
+[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
