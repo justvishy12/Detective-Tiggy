@@ -63,6 +63,8 @@ func check_box() -> void:
 		if area.overlaps_body(self):
 			if area.types == type:
 				freeze = false
+				if !correct_box:
+					$"../..".ammount_in += 1
 				correct_box = true
 				checking_drop = false
 				check_done()
@@ -75,6 +77,7 @@ func check_box() -> void:
 				return
 	if correct_box:
 		correct_box = false
+		$"../..".ammount_in -= 1
 		reset_item()
 		return
 	else:

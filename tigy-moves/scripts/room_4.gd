@@ -4,6 +4,7 @@ var wrong = 0
 var played = false
 var start_time: int
 var elapsed_time: int
+var ammount_in = 0
 
 var skip_typing = false
 var dialogue = [
@@ -136,6 +137,10 @@ func _on_you_pressed() -> void:
 
 func _ready() -> void:
 	show_next_dialogue()
+	
+func _process(delta: float) -> void:
+	$"game items/count".text = str(ammount_in) + "/14"
+	
 
 func game_beat():
 	SaveManager.room4 = true

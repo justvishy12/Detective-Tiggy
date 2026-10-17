@@ -462,6 +462,7 @@ text = "hahaha"
 libraries/ = SubResource("AnimationLibrary_xnpxu")
 
 [node name="stars" type="Node2D" parent="." unique_id=1672862544]
+visible = false
 
 [node name="GreyS" type="Sprite2D" parent="stars" unique_id=32234220]
 position = Vector2(415.86053, 134.56314)
