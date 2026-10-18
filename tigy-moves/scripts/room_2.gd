@@ -1,5 +1,6 @@
 extends Node2D
 
+var window = true
 
 var skip_typing = false
 var dialogue = [
@@ -78,6 +79,7 @@ func show_cat_text(line) -> void:
 func _input(event):
 	if dialogue_index == 1:
 		$kitchen2.visible = true
+		$Right.visible = true
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat" and dialogue_index != 1 and dialogue_index != 2:
 			dialogue_index += 1
@@ -102,12 +104,15 @@ func _on_you_pressed() -> void:
 	show_next_dialogue()
 	
 func _ready() -> void:
+	$Left.visible = false
+	$Right.visible = false
 	$kitchen.visible = false
 	$room.visible = false
 	if SaveManager.kitchen == true:
 		$room2.visible = true
 		$room.visible = true
 		dialogue_index = 2
+		$Left.visible = true
 	show_next_dialogue()
 
 
@@ -130,3 +135,12 @@ func _on_kitchen_pressed() -> void:
 
 func _on_room_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/room4.tscn")
+
+
+func _on_window_pressed() -> void:
+	if window == true:
+		$WindowL.visible = false
+		window = false
+	elif window == false:
+		$WindowL.visible = true
+		window = true

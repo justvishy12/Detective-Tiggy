@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dvgrg857vdglt" path="res://assets/DirtyBasket.png" id="5_dtrb7"]
 [ext_resource type="Texture2D" uid="uid://6bahcdx0kj8c" path="res://assets/BasketFront.png" id="6_npsde"]
 [ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="7_3k0wu"]
+[ext_resource type="Texture2D" uid="uid://cur3yu7fgvxkw" path="res://assets/WindowD.png" id="7_erp5q"]
+[ext_resource type="Texture2D" uid="uid://dj4ytkhiswcfj" path="res://assets/WindowL.png" id="8_8tq5h"]
 [ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="8_kxjkn"]
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="9_erp5q"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="10_8tq5h"]
@@ -81,9 +83,6 @@ _data = {
 &"fade out": SubResource("Animation_22dcw")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxjkn"]
-bg_color = Color(0, 0, 0, 0.7411765)
-
 [sub_resource type="Animation" id="Animation_kxjkn"]
 length = 0.001
 
@@ -132,6 +131,9 @@ _data = {
 &"camera pan": SubResource("Animation_erp5q")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxjkn"]
+bg_color = Color(0, 0, 0, 0.7411765)
+
 [node name="Node2D" type="Node2D" unique_id=1011711845]
 script = ExtResource("1_277jj")
 
@@ -165,6 +167,20 @@ texture = ExtResource("5_dtrb7")
 position = Vector2(505, 496)
 rotation = -0.061086524
 texture = ExtResource("6_npsde")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=785522501]
+libraries/ = SubResource("AnimationLibrary_3k0wu")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=994132801]
+libraries/ = SubResource("AnimationLibrary_8tq5h")
+
+[node name="WindowD" type="Sprite2D" parent="." unique_id=1328643834]
+position = Vector2(466, 314)
+texture = ExtResource("7_erp5q")
+
+[node name="WindowL" type="Sprite2D" parent="." unique_id=612550097]
+position = Vector2(538, 396)
+texture = ExtResource("8_8tq5h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1070458521]
 position = Vector2(640, 360)
@@ -227,10 +243,8 @@ theme_override_styles/hover = ExtResource("10_8tq5h")
 theme_override_styles/focus = ExtResource("10_8tq5h")
 text = "hahaha"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=785522501]
-libraries/ = SubResource("AnimationLibrary_3k0wu")
-
 [node name="Panel" type="Panel" parent="." unique_id=734814876]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -13.0
 offset_top = -9.0
@@ -240,9 +254,15 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxjkn")
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=994132801]
-libraries/ = SubResource("AnimationLibrary_8tq5h")
+[node name="Window" type="Button" parent="." unique_id=965932102]
+modulate = Color(1, 1, 1, 0)
+offset_left = 394.0
+offset_top = 245.0
+offset_right = 539.0
+offset_bottom = 381.0
+mouse_default_cursor_shape = 2
 
 [connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
 [connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
+[connection signal="pressed" from="Window" to="." method="_on_window_pressed"]

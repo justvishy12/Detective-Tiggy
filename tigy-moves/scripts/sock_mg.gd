@@ -120,14 +120,14 @@ var dialogue = [
 		#2
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Drag socks into different collumns, each can hold 4. ",
+		"text": "Drag socks into different columns, you can only drag the top sock (move socks to get to others). ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{
 		#3
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "To finish, three collumn should have socks of same color, with one empty, got it? ",
+		"text": "To finish, three column should have socks of same color, with one empty, got it? ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{
@@ -316,18 +316,18 @@ func _on_a_1_button_down() -> void:
 		print("works")
 
 func _on_a_2_button_down() -> void:
-	if a2[0] != $Empty:
+	if a2[0] != $Empty and a1[0] == $Empty:
 		dragginga2 = true
 		ofa2 = get_global_mouse_position() - a2[0].global_position
 
 func _on_a_3_button_down() -> void:
-	if a3[0] != $Empty:
+	if a3[0] != $Empty and a2[0] == $Empty:
 		dragginga3 = true
 		ofa3 = get_global_mouse_position() - a3[0].global_position
 
 
 func _on_a_4_button_down() -> void:
-	if a4[0] != $Empty:
+	if a4[0] != $Empty and a3[0] == $Empty:
 		dragginga4 = true
 		ofa4 = get_global_mouse_position() - a4[0].global_position
 
@@ -339,19 +339,19 @@ func _on_b_1_button_down() -> void:
 
 
 func _on_b_2_button_down() -> void:
-	if b2[0] != $Empty:
+	if b2[0] != $Empty and b1[0] == $Empty:
 		draggingb2 = true
 		ofb2 = get_global_mouse_position() - b2[0].global_position
 
 
 func _on_b_3_button_down() -> void:
-	if b3[0] != $Empty:
+	if b3[0] != $Empty and b2[0] == $Empty:
 		draggingb3 = true
 		ofb3 = get_global_mouse_position() - b3[0].global_position
 
 
 func _on_b_4_button_down() -> void:
-	if b4[0] != $Empty:
+	if b4[0] != $Empty and b3[0] == $Empty:
 		draggingb4 = true
 		ofb4 = get_global_mouse_position() - b4[0].global_position
 
@@ -362,19 +362,19 @@ func _on_c_1_button_down() -> void:
 		ofc1 = get_global_mouse_position() - c1[0].global_position
 
 func _on_c_2_button_down() -> void:
-	if c2[0] != $Empty:
+	if c2[0] != $Empty and c1[0] == $Empty:
 		draggingc2 = true
 		ofc2 = get_global_mouse_position() - c2[0].global_position
 
 
 func _on_c_3_button_down() -> void:
-	if c3[0] != $Empty:
+	if c3[0] != $Empty and c2[0] == $Empty:
 		draggingc3 = true
 		ofc3 = get_global_mouse_position() - c3[0].global_position
 
 
 func _on_c_4_button_down() -> void:
-	if c4[0] != $Empty:
+	if c4[0] != $Empty and c3[0] == $Empty:
 		draggingc4 = true
 		ofc4 = get_global_mouse_position() - c4[0].global_position
 
@@ -386,19 +386,19 @@ func _on_d_1_button_down() -> void:
 
 
 func _on_d_2_button_down() -> void:
-	if d2[0] != $Empty:
+	if d2[0] != $Empty and a1[0] == $Empty:
 		draggingd2 = true
 		ofd2 = get_global_mouse_position() - d2[0].global_position
 
 
 func _on_d_3_button_down() -> void:
-	if d3[0] != $Empty:
+	if d3[0] != $Empty and a1[0] == $Empty:
 		draggingd3 = true
 		ofd3 = get_global_mouse_position() - d3[0].global_position
 
 
 func _on_d_4_button_down() -> void:
-	if d4[0] != $Empty:
+	if d4[0] != $Empty and a1[0] == $Empty:
 		draggingd4 = true
 		ofd4 = get_global_mouse_position() - d4[0].global_position
 

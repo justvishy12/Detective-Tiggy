@@ -14,6 +14,8 @@ var canm5 = false
 
 var played = false
 
+var microwave = false
+
 var skip_typing = false
 var dialogue = [
 	{
@@ -103,6 +105,8 @@ func _input(event):
 	if dialogue_index == 1 and played == false:
 		played = true
 		$AnimationPlayer.play("camerapan")
+	if dialogue_index == 3:
+		$PanelBG.visible = true
 
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat":
@@ -246,3 +250,12 @@ func _on_area_4_mouse_exited() -> void:
 
 func _on_door_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/room2.tscn")
+
+
+func _on_microwave_pressed() -> void:
+	if microwave == false:
+		$MicrowaveO.visible = true
+		microwave = true
+	elif microwave == true:
+		$MicrowaveO.visible = false
+		microwave = false

@@ -18,11 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://jolmkq7hgoig" path="res://assets/bottle-1.png" id="15_cl5w0"]
 [ext_resource type="Texture2D" uid="uid://x4brs71esdp1" path="res://assets/GoldS.png" id="16_dhxj8"]
 [ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="17_1ok7q"]
+[ext_resource type="Texture2D" uid="uid://me6usth6llhr" path="res://assets/BedroomPhoto.png" id="17_827il"]
 [ext_resource type="Script" uid="uid://bgd6qyx1kn3df" path="res://scripts/boxarea.gd" id="19_1ok7q"]
 [ext_resource type="Script" uid="uid://2hxbiww81hk2" path="res://scripts/timer.gd" id="20_7v453"]
 [ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="21_fumeg"]
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="22_mm2yy"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="23_827il"]
+[ext_resource type="Texture2D" uid="uid://ba7g88twcnnve" path="res://assets/arrow.png" id="23_m2nla"]
 [ext_resource type="Texture2D" uid="uid://duv5tanb83en4" path="res://assets/GreyS.png" id="24_mm2yy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
@@ -125,12 +127,20 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm2yy"]
+bg_color = Color(0, 0, 0, 0.5058824)
+
 [node name="Node2D" type="Node2D" unique_id=1270154753]
 script = ExtResource("1_q6beh")
 
 [node name="Room4" type="Sprite2D" parent="." unique_id=1693048092]
 position = Vector2(640, 360)
 texture = ExtResource("1_xadx6")
+
+[node name="BedroomPhoto" type="Sprite2D" parent="." unique_id=1066216159]
+position = Vector2(428, 164)
+scale = Vector2(0.6005747, 0.60057473)
+texture = ExtResource("17_827il")
 
 [node name="Messy" type="Node2D" parent="." unique_id=2007422135]
 
@@ -516,15 +526,6 @@ position = Vector2(633, 409)
 scale = Vector2(0.5925926, 0.5925926)
 texture = ExtResource("12_cl5w0")
 
-[node name="room" type="Button" parent="." unique_id=575761351]
-visible = false
-modulate = Color(1, 1, 1, 0)
-offset_left = 1047.0
-offset_top = -9.0
-offset_right = 1284.0
-offset_bottom = 386.0
-mouse_default_cursor_shape = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1298968412]
 
 [node name="Panel" type="Panel" parent="." unique_id=191827838]
@@ -559,7 +560,7 @@ polygon = PackedVector2Array(498, 226, 524, 302, 524, 447, 669, 447, 669, 351, 6
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1205792007]
 position = Vector2(395, 0)
-polygon = PackedVector2Array(497, 227, 524, 302, 524, 447, 669, 447, 669, 351, 669, 301, 698, 225, 655, 302, 655, 432, 539, 432, 538, 302)
+polygon = PackedVector2Array(497, 227, 524, 302, 524, 447, 669, 447, 669, 351, 669, 301, 668, 287, 655, 302, 655, 432, 539, 432, 538, 302)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1958942531]
 position = Vector2(-39, 391)
@@ -702,7 +703,75 @@ offset_top = -19.0
 offset_right = 1330.0
 offset_bottom = 738.0
 
+[node name="stars" type="Node2D" parent="." unique_id=1161466514]
+visible = false
+
+[node name="GreyS" type="Sprite2D" parent="stars" unique_id=807174463]
+position = Vector2(415.86053, 134.56314)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("24_mm2yy")
+
+[node name="Star1" type="Sprite2D" parent="stars" unique_id=2096183235]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(415.86053, 134.56314)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("16_dhxj8")
+
+[node name="GreyS3" type="Sprite2D" parent="stars" unique_id=526577577]
+position = Vector2(871.86053, 134.56314)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("24_mm2yy")
+
+[node name="Star3" type="Sprite2D" parent="stars" unique_id=829978849]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(871.86053, 134.56314)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("16_dhxj8")
+
+[node name="GreyS2" type="Sprite2D" parent="stars" unique_id=1118003688]
+position = Vector2(641.776, 105.67209)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("24_mm2yy")
+
+[node name="Star2" type="Sprite2D" parent="stars" unique_id=219892767]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(641.776, 105.67209)
+scale = Vector2(1.4734417, 1.4734417)
+texture = ExtResource("16_dhxj8")
+
+[node name="PanelBG" type="Node2D" parent="." unique_id=1014398404]
+visible = false
+
+[node name="Panel6" type="Panel" parent="PanelBG" unique_id=964977946]
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 1049.0
+offset_bottom = 775.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
+
+[node name="Panel7" type="Panel" parent="PanelBG" unique_id=1748518367]
+offset_left = 1049.0
+offset_top = 382.0
+offset_right = 1442.0
+offset_bottom = 757.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1359991319]
+visible = false
+position = Vector2(1173, 456)
+texture = ExtResource("23_m2nla")
+
+[node name="room" type="Button" parent="." unique_id=575761351]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 1047.0
+offset_top = -9.0
+offset_right = 1284.0
+offset_bottom = 386.0
+mouse_default_cursor_shape = 2
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1620197236]
+visible = false
 position = Vector2(640, 360)
 
 [node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1902231371]
@@ -767,42 +836,6 @@ theme_override_styles/hover = ExtResource("23_827il")
 theme_override_styles/focus = ExtResource("23_827il")
 text = "hahaha"
 
-[node name="stars" type="Node2D" parent="." unique_id=1161466514]
-visible = false
-
-[node name="GreyS" type="Sprite2D" parent="stars" unique_id=807174463]
-position = Vector2(415.86053, 134.56314)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("24_mm2yy")
-
-[node name="Star1" type="Sprite2D" parent="stars" unique_id=2096183235]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(415.86053, 134.56314)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("16_dhxj8")
-
-[node name="GreyS3" type="Sprite2D" parent="stars" unique_id=526577577]
-position = Vector2(871.86053, 134.56314)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("24_mm2yy")
-
-[node name="Star3" type="Sprite2D" parent="stars" unique_id=829978849]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(871.86053, 134.56314)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("16_dhxj8")
-
-[node name="GreyS2" type="Sprite2D" parent="stars" unique_id=1118003688]
-position = Vector2(641.776, 105.67209)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("24_mm2yy")
-
-[node name="Star2" type="Sprite2D" parent="stars" unique_id=219892767]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(641.776, 105.67209)
-scale = Vector2(1.4734417, 1.4734417)
-texture = ExtResource("16_dhxj8")
-
 [connection signal="input_event" from="Messy/book" to="Messy/book" method="_on_input_event"]
 [connection signal="input_event" from="Messy/Yarnball" to="Messy/Yarnball" method="_on_input_event"]
 [connection signal="input_event" from="Messy/yarnball" to="Messy/yarnball" method="_on_input_event"]
@@ -818,4 +851,5 @@ texture = ExtResource("16_dhxj8")
 [connection signal="input_event" from="Messy/star" to="Messy/star" method="_on_input_event"]
 [connection signal="input_event" from="Messy/bottle" to="Messy/bottle" method="_on_input_event"]
 [connection signal="pressed" from="game items/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="room" to="." method="_on_room_pressed"]
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]

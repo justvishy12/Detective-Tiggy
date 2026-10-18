@@ -1,5 +1,7 @@
 extends Node2D
 
+var window = true
+
 var pan = false
 var skip_typing = false
 var dialogue = [
@@ -102,7 +104,8 @@ func _on_you_pressed() -> void:
 		await $AnimationPlayer.animation_finished
 		SaveManager.room1 = true
 		SaveManager.save_game(SaveManager.current_slot)
-		get_tree().change_scene_to_file("res://scenes/sockMG.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/sockMG.tscn")
+		return
 		
 		
 	dialogue_index += 1
@@ -120,3 +123,12 @@ func _on_photo_1_area_mouse_entered() -> void:
 
 func _on_photo_1_area_mouse_exited() -> void:
 	$photo1.stop()
+
+
+func _on_window_pressed() -> void:
+	if window == true:
+		$WindowL.visible = false
+		window = false
+	elif window == false:
+		$WindowL.visible = true
+		window = true

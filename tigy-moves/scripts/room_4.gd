@@ -52,7 +52,7 @@ var dialogue = [
 		#6
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Enter the ZEN GARDEN, NOW! ",
+		"text": "Enter the ZEN GARDEN, NOW! (click the door)",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 
@@ -108,7 +108,10 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
-	
+	if dialogue_index == 5:
+		$Arrow.visible = true
+		$PanelBG.visible = true
+		$room.visible = true
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat":
 			if dialogue_index != 4:	
@@ -136,6 +139,7 @@ func _on_you_pressed() -> void:
 
 
 func _ready() -> void:
+	$Arrow.visible = false
 	show_next_dialogue()
 	
 func _process(delta: float) -> void:
@@ -178,3 +182,7 @@ func _on_restart_pressed() -> void:
 		body.angular_velocity = 0.0
 		body.global_position = body.start_position
 		body.gravity_scale = 0
+
+
+func _on_room_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/zen garden.tscn")
