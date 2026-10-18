@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_continue_pressed() -> void:
+	$".".visible = false
 	get_tree().paused = false
 
 

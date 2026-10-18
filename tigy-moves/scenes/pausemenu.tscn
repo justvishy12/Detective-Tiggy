@@ -125,6 +125,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_48q5p")
 value = 50.0
 script = ExtResource("4_3gyci")
+bus_name = "Master"
 
 [node name="musicvol" type="HSlider" parent="VBoxContainer2" unique_id=58185210]
 layout_mode = 2
@@ -132,6 +133,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_48q5p")
 value = 50.0
 script = ExtResource("5_e0wba")
+bus_name = "Music"
 
 [node name="sfxvol" type="HSlider" parent="VBoxContainer2" unique_id=95708106]
 layout_mode = 2
@@ -139,12 +141,16 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_48q5p")
 value = 50.0
 script = ExtResource("6_klbn3")
+bus_name = "Sfx"
 
 [node name="textspeed" type="HSlider" parent="VBoxContainer2" unique_id=1311549850]
 layout_mode = 2
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_48q5p")
-value = 50.0
+min_value = 0.01
+max_value = 0.1
+step = 0.001
+value = 0.05
 script = ExtResource("7_g5jmi")
 
 [node name="continue" type="Button" parent="." unique_id=214771615]

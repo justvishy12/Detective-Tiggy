@@ -183,6 +183,25 @@ texture = ExtResource("7_erp5q")
 position = Vector2(538, 396)
 texture = ExtResource("8_8tq5h")
 
+[node name="Window" type="Button" parent="." unique_id=965932102]
+modulate = Color(1, 1, 1, 0)
+offset_left = 394.0
+offset_top = 245.0
+offset_right = 539.0
+offset_bottom = 381.0
+mouse_default_cursor_shape = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=734814876]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -13.0
+offset_top = -9.0
+offset_right = 1291.0
+offset_bottom = 725.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxjkn")
+metadata/_edit_use_anchors_ = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1070458521]
 position = Vector2(640, 360)
 
@@ -244,29 +263,11 @@ theme_override_styles/hover = ExtResource("10_8tq5h")
 theme_override_styles/focus = ExtResource("10_8tq5h")
 text = "hahaha"
 
-[node name="Panel" type="Panel" parent="." unique_id=734814876]
+[node name="pausemenu" parent="Camera2D" unique_id=2056926520 instance=ExtResource("13_8tq5h")]
 visible = false
-modulate = Color(1, 1, 1, 0)
-offset_left = -13.0
-offset_top = -9.0
-offset_right = 1291.0
-offset_bottom = 725.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kxjkn")
-metadata/_edit_use_anchors_ = true
-
-[node name="Window" type="Button" parent="." unique_id=965932102]
-modulate = Color(1, 1, 1, 0)
-offset_left = 394.0
-offset_top = 245.0
-offset_right = 539.0
-offset_bottom = 381.0
-mouse_default_cursor_shape = 2
-
-[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("13_8tq5h")]
-visible = false
+position = Vector2(-640, -360)
 
 [connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
 [connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]
-[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
+[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
