@@ -15,7 +15,7 @@ var dialogue = [
 		#1
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Lets go into the kitchen (travel by clicking doors only when directed). ",
+		"text": "Lets go into the kitchen (travel by clicking doors). ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 	{
@@ -77,6 +77,9 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		$pausemenu.visible = true
 	if dialogue_index == 1:
 		$kitchen2.visible = true
 		$Right.visible = true

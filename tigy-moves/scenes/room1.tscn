@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="8_kxjkn"]
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="9_erp5q"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="10_8tq5h"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="13_8tq5h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_277jj"]
 atlas = ExtResource("2_gli6d")
@@ -261,6 +262,9 @@ offset_top = 245.0
 offset_right = 539.0
 offset_bottom = 381.0
 mouse_default_cursor_shape = 2
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("13_8tq5h")]
+visible = false
 
 [connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
 [connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]

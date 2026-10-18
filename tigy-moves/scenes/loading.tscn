@@ -18,7 +18,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kpj8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33we"]
 bg_color = Color(0.4843766, 0.5969794, 0.82723457, 1)
 border_width_left = 2
 border_width_top = 2
@@ -177,7 +177,7 @@ offset_bottom = 305.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Load"
 
@@ -190,7 +190,7 @@ offset_bottom = 306.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Reset"
 
@@ -249,7 +249,7 @@ offset_bottom = 305.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Load"
 
@@ -262,7 +262,7 @@ offset_bottom = 306.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Reset"
 
@@ -321,7 +321,7 @@ offset_bottom = 305.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Load"
 
@@ -334,7 +334,7 @@ offset_bottom = 306.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r33we")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w173s")
 text = "Reset"
 

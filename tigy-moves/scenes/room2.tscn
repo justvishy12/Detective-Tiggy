@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cur3yu7fgvxkw" path="res://assets/WindowD.png" id="9_c7xmq"]
 [ext_resource type="Texture2D" uid="uid://dj4ytkhiswcfj" path="res://assets/WindowL.png" id="10_olrvt"]
 [ext_resource type="Texture2D" uid="uid://ba7g88twcnnve" path="res://assets/arrow.png" id="11_olrvt"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="12_5wf3f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_277jj"]
 atlas = ExtResource("2_dbehi")
@@ -250,6 +251,9 @@ theme_override_styles/pressed = ExtResource("7_c7xmq")
 theme_override_styles/hover = ExtResource("7_c7xmq")
 theme_override_styles/focus = ExtResource("7_c7xmq")
 text = "hahaha"
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("12_5wf3f")]
+visible = false
 
 [connection signal="mouse_entered" from="photo1area" to="." method="_on_photo_1_area_mouse_entered"]
 [connection signal="mouse_exited" from="photo1area" to="." method="_on_photo_1_area_mouse_exited"]

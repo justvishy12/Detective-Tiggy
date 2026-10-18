@@ -196,6 +196,9 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		$pausemenu.visible = true
 	if dialogue_index == 6:
 		SaveManager.sockMG = true
 		SaveManager.save_game(SaveManager.current_slot)
@@ -253,15 +256,15 @@ func _process(delta: float) -> void:
 		$stars.visible = true
 		var tween1 = create_tween()
 		tween1.tween_property($stars, "modulate:a", 1.0, 1.0)
-		if elapsed_time < 35:
+		if elapsed_time < 45:
 			$stars/Star1.modulate.a = 0.0
 			var tween2 = create_tween()
 			tween2.tween_property($stars/Star1, "modulate:a", 1.0, 1.0)
-		if elapsed_time < 20:
+		if elapsed_time < 30:
 			$stars/Star2.modulate.a = 0.0
 			var tween3 = create_tween()
 			tween3.tween_property($stars/Star2, "modulate:a", 1.0, 1.0)
-		if elapsed_time < 12:
+		if elapsed_time < 20:
 			$stars/Star3.modulate.a = 0.0
 			var tween4 = create_tween()
 			tween4.tween_property($stars/Star3, "modulate:a", 1.0, 1.0)

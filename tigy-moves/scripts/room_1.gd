@@ -84,6 +84,9 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		$pausemenu.visible = true
 	if dialogue_index == 2 and pan == false:
 		pan = true
 		$AnimationPlayer.play("basketfront")

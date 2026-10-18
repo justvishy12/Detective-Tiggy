@@ -19,6 +19,7 @@
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="15_tj7kk"]
 [ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="16_w6rm3"]
 [ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="17_tj7kk"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="20_svdu2"]
 
 [sub_resource type="Animation" id="Animation_ytxec"]
 length = 0.001
@@ -371,6 +372,7 @@ offset_left = 1037.0
 offset_top = 365.0
 offset_right = 1247.0
 offset_bottom = 468.0
+mouse_default_cursor_shape = 2
 
 [node name="PanelBG" type="Node2D" parent="." unique_id=57383090]
 visible = false
@@ -471,6 +473,9 @@ offset_top = 181.0
 offset_right = 283.0
 offset_bottom = 727.0
 mouse_default_cursor_shape = 2
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("20_svdu2")]
+visible = false
 
 [connection signal="pressed" from="M1/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="M2/Button2" to="." method="_on_button_2_pressed"]

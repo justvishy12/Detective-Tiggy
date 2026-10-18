@@ -102,11 +102,14 @@ func show_cat_text(line) -> void:
 	typing = false
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		$pausemenu.visible = true
 	if dialogue_index == 1 and played == false:
 		played = true
 		$AnimationPlayer.play("camerapan")
 	if dialogue_index == 3:
-		$PanelBG.visible = true
+		$PanelBG.visible = false
 
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat":
@@ -140,15 +143,15 @@ func _process(delta: float) -> void:
 
 func update_label():
 	if recipie_pieces == 1:
-		$ammount.text = "1/5"
+		$ammount.text = "1/6"
 	elif recipie_pieces == 2:
-		$ammount.text = "2/5"
+		$ammount.text = "2/6"
 	elif recipie_pieces == 3:
-		$ammount.text = "3/5"
+		$ammount.text = "3/6"
 	elif recipie_pieces == 4:
-		$ammount.text = "4/5"
+		$ammount.text = "4/6"
 	elif recipie_pieces == 5:
-		$ammount.text = "5/5"
+		$ammount.text = "5/6"
 		dialogue_index = 4
 		SaveManager.kitchen = true
 		SaveManager.save_game(SaveManager.current_slot)

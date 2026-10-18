@@ -12,6 +12,7 @@
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="8_en7y8"]
 [ext_resource type="Texture2D" uid="uid://x4brs71esdp1" path="res://assets/GoldS.png" id="11_146xa"]
 [ext_resource type="Texture2D" uid="uid://duv5tanb83en4" path="res://assets/GreyS.png" id="12_is14f"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="13_is14f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwg6i"]
 bg_color = Color(0, 0, 0, 0.7411765)
@@ -496,6 +497,9 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(641.776, 105.67209)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("11_146xa")
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("13_is14f")]
+visible = false
 
 [connection signal="button_down" from="Buttons/A1" to="." method="_on_a_1_button_down"]
 [connection signal="button_up" from="Buttons/A1" to="." method="_on_a_1_button_up"]

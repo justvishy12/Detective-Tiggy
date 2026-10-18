@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="5_e22jj"]
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="6_ytxec"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="7_22dcw"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="8_22dcw"]
 
 [sub_resource type="Animation" id="Animation_ytxec"]
 length = 0.001
@@ -130,5 +131,8 @@ offset_right = 1291.0
 offset_bottom = 725.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("8_22dcw")]
+visible = false
 
 [connection signal="pressed" from="you" to="." method="_on_you_pressed"]

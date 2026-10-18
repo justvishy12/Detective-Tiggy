@@ -14,6 +14,7 @@
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="11_n6qjw"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_ubfgq"]
 [ext_resource type="Texture2D" uid="uid://clffenq7v2ab0" path="res://assets/Hat.png" id="14_kmkhr"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="15_lestv"]
 
 [sub_resource type="Animation" id="Animation_kmkhr"]
 length = 0.001
@@ -323,5 +324,8 @@ autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=437844803]
 libraries/ = SubResource("AnimationLibrary_vab3i")
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("15_lestv")]
+visible = false
 
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]

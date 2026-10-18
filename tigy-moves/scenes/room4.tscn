@@ -26,6 +26,7 @@
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="23_827il"]
 [ext_resource type="Texture2D" uid="uid://ba7g88twcnnve" path="res://assets/arrow.png" id="23_m2nla"]
 [ext_resource type="Texture2D" uid="uid://duv5tanb83en4" path="res://assets/GreyS.png" id="24_mm2yy"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="27_u7xsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
 size = Vector2(46.965027, 33.466217)
@@ -703,6 +704,23 @@ offset_top = -19.0
 offset_right = 1330.0
 offset_bottom = 738.0
 
+[node name="PanelBG" type="Node2D" parent="." unique_id=1014398404]
+visible = false
+
+[node name="Panel6" type="Panel" parent="PanelBG" unique_id=964977946]
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 1049.0
+offset_bottom = 775.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
+
+[node name="Panel7" type="Panel" parent="PanelBG" unique_id=1748518367]
+offset_left = 1049.0
+offset_top = 382.0
+offset_right = 1442.0
+offset_bottom = 757.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
+
 [node name="stars" type="Node2D" parent="." unique_id=1161466514]
 visible = false
 
@@ -739,23 +757,6 @@ position = Vector2(641.776, 105.67209)
 scale = Vector2(1.4734417, 1.4734417)
 texture = ExtResource("16_dhxj8")
 
-[node name="PanelBG" type="Node2D" parent="." unique_id=1014398404]
-visible = false
-
-[node name="Panel6" type="Panel" parent="PanelBG" unique_id=964977946]
-offset_left = -8.0
-offset_top = -7.0
-offset_right = 1049.0
-offset_bottom = 775.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
-
-[node name="Panel7" type="Panel" parent="PanelBG" unique_id=1748518367]
-offset_left = 1049.0
-offset_top = 382.0
-offset_right = 1442.0
-offset_bottom = 757.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mm2yy")
-
 [node name="Arrow" type="Sprite2D" parent="." unique_id=1359991319]
 visible = false
 position = Vector2(1173, 456)
@@ -771,7 +772,6 @@ offset_bottom = 386.0
 mouse_default_cursor_shape = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1620197236]
-visible = false
 position = Vector2(640, 360)
 
 [node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1902231371]
@@ -835,6 +835,9 @@ theme_override_styles/pressed = ExtResource("23_827il")
 theme_override_styles/hover = ExtResource("23_827il")
 theme_override_styles/focus = ExtResource("23_827il")
 text = "hahaha"
+
+[node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("27_u7xsw")]
+visible = false
 
 [connection signal="input_event" from="Messy/book" to="Messy/book" method="_on_input_event"]
 [connection signal="input_event" from="Messy/Yarnball" to="Messy/Yarnball" method="_on_input_event"]
