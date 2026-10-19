@@ -94,6 +94,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and dragging:
+			$"../../drop".play_sfx_hit()
 			dragging = false
 			freeze = false
 			gravity_scale = 1

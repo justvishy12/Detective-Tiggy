@@ -27,6 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://ba7g88twcnnve" path="res://assets/arrow.png" id="23_m2nla"]
 [ext_resource type="Texture2D" uid="uid://duv5tanb83en4" path="res://assets/GreyS.png" id="24_mm2yy"]
 [ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="27_u7xsw"]
+[ext_resource type="AudioStream" uid="uid://dlk350fw6jr2e" path="res://audio/dropping.mp3" id="28_lp7lu"]
+[ext_resource type="Script" uid="uid://b5xc310aw1t1y" path="res://scripts/pitch.gd" id="29_fgqwv"]
+[ext_resource type="AudioStream" uid="uid://cke6x5d23ubip" path="res://audio/digging.mp3" id="30_fgqwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
 size = Vector2(46.965027, 33.466217)
@@ -838,6 +841,19 @@ text = "hahaha"
 
 [node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("27_u7xsw")]
 visible = false
+
+[node name="drop" type="AudioStreamPlayer2D" parent="." unique_id=217880143]
+stream = ExtResource("28_lp7lu")
+volume_db = 5.0
+bus = &"Sfx"
+parameters/looping = false
+script = ExtResource("29_fgqwv")
+
+[node name="sand" type="AudioStreamPlayer2D" parent="." unique_id=1305806524]
+stream = ExtResource("30_fgqwv")
+volume_db = 10.0
+bus = &"Sfx"
+parameters/looping = true
 
 [connection signal="input_event" from="Messy/book" to="Messy/book" method="_on_input_event"]
 [connection signal="input_event" from="Messy/Yarnball" to="Messy/Yarnball" method="_on_input_event"]

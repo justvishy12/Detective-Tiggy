@@ -130,9 +130,11 @@ func _input(event):
 		get_tree().paused = true
 		$pausemenu.visible = true
 	if dialogue_index == 2 and played == false:
+		$sand.stop()
 		played = true
 		$AnimationPlayer.stop()
 		$AnimationPlayer.play("tusky turn")
+		$tusk.play
 	if dialogue_index == 6 and played == true:
 		played = false
 		await get_tree().create_timer(0.3).timeout
@@ -145,6 +147,7 @@ func _input(event):
 	if dialogue_index == 8:
 		$"close items".visible = false
 	if dialogue_index == 9 and played2 == false:
+		$pan.play()
 		played2 = true
 		print(played2)
 		$AnimationPlayer.play("grab_tusky")
@@ -164,6 +167,7 @@ func _on_you_pressed() -> void:
 	show_next_dialogue()
 		
 func _ready() -> void:
+	$sand.play()
 	$AnimationPlayer.play("digging")
 	show_next_dialogue()
 

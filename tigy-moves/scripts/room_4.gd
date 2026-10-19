@@ -108,6 +108,8 @@ func show_cat_text(line) -> void:
 
 
 func _input(event):
+	if dialogue_index == 4:
+		$sand.play()
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().paused = true
 		$pausemenu.visible = true
@@ -142,6 +144,7 @@ func _on_you_pressed() -> void:
 
 
 func _ready() -> void:
+	
 	$Arrow.visible = false
 	show_next_dialogue()
 	

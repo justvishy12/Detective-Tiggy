@@ -15,6 +15,9 @@
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_ubfgq"]
 [ext_resource type="Texture2D" uid="uid://clffenq7v2ab0" path="res://assets/Hat.png" id="14_kmkhr"]
 [ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="15_lestv"]
+[ext_resource type="AudioStream" uid="uid://c155cbrrxefey" path="res://audio/wind.mp3" id="16_6yti8"]
+[ext_resource type="AudioStream" uid="uid://cke6x5d23ubip" path="res://audio/digging.mp3" id="17_vab3i"]
+[ext_resource type="AudioStream" uid="uid://cj03olltbf8o5" path="res://audio/tuskyturnn.mp3" id="18_x4nyo"]
 
 [sub_resource type="Animation" id="Animation_kmkhr"]
 length = 0.001
@@ -327,5 +330,23 @@ libraries/ = SubResource("AnimationLibrary_vab3i")
 
 [node name="pausemenu" parent="." unique_id=2056926520 instance=ExtResource("15_lestv")]
 visible = false
+
+[node name="pan" type="AudioStreamPlayer2D" parent="." unique_id=723353200]
+stream = ExtResource("16_6yti8")
+pitch_scale = 2.0
+bus = &"Sfx"
+
+[node name="sand" type="AudioStreamPlayer2D" parent="." unique_id=490101272]
+stream = ExtResource("17_vab3i")
+volume_db = 10.0
+pitch_scale = 0.76
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="tusk" type="AudioStreamPlayer2D" parent="." unique_id=27586905]
+stream = ExtResource("18_x4nyo")
+volume_db = 3.0
+pitch_scale = 0.76
+bus = &"Sfx"
 
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]

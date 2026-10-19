@@ -162,6 +162,7 @@ func update_label():
 #region button pressed
 func _on_button_pressed() -> void:
 	if m1 == false:
+		$pick.play_sfx_hit()
 		$M1.visible = false
 		m1 = true
 		recipie_pieces += 1
@@ -170,6 +171,7 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	if m2 == false:
 		$M2.visible = false
+		$pick.play_sfx_hit()
 		m2 = true
 		recipie_pieces += 1
 		update_label()
@@ -177,6 +179,7 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	if m3 == false:
 		$M3.visible = false
+		$pick.play_sfx_hit()
 		m3 = true
 		recipie_pieces += 1
 		update_label()
@@ -184,6 +187,7 @@ func _on_button_3_pressed() -> void:
 func _on_button_4_pressed() -> void:
 	if m4 == false:
 		$M4.visible = false
+		$pick.play_sfx_hit()
 		m4 = true
 		recipie_pieces += 1
 		update_label()
@@ -191,6 +195,7 @@ func _on_button_4_pressed() -> void:
 func _on_button_5_pressed() -> void:
 	if m5 == false:
 		$M5.visible = false
+		$pick.play_sfx_hit()
 		m5 = true
 		recipie_pieces += 1
 		update_label()

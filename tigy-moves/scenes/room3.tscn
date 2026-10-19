@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="16_w6rm3"]
 [ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="17_tj7kk"]
 [ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="20_svdu2"]
+[ext_resource type="AudioStream" uid="uid://by54ulg3rhymj" path="res://audio/paperpick.mp3" id="21_uywbr"]
+[ext_resource type="Script" uid="uid://b5xc310aw1t1y" path="res://scripts/pitch.gd" id="22_1g8rs"]
 
 [sub_resource type="Animation" id="Animation_ytxec"]
 length = 0.001
@@ -477,6 +479,12 @@ offset_bottom = 727.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uywbr")
 metadata/_edit_use_anchors_ = true
+
+[node name="pick" type="AudioStreamPlayer2D" parent="." unique_id=324146975]
+stream = ExtResource("21_uywbr")
+volume_db = 5.0
+bus = &"Sfx"
+script = ExtResource("22_1g8rs")
 
 [connection signal="pressed" from="M1/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="M2/Button2" to="." method="_on_button_2_pressed"]
