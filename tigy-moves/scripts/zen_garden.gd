@@ -134,7 +134,7 @@ func _input(event):
 		played = true
 		$AnimationPlayer.stop()
 		$AnimationPlayer.play("tusky turn")
-		$tusk.play
+		$tusk.play()
 	if dialogue_index == 6 and played == true:
 		played = false
 		await get_tree().create_timer(0.3).timeout

@@ -1,0 +1,353 @@
+[gd_scene format=3 uid="uid://bslwihjikvyxe"]
+
+[ext_resource type="Texture2D" uid="uid://di58khi87egqa" path="res://assets/kitchen items/room3.png" id="1_58u3k"]
+[ext_resource type="Script" uid="uid://d3lvid8jgulxa" path="res://scripts/kitchen.gd" id="1_acu1m"]
+[ext_resource type="Texture2D" uid="uid://dn2cuj1mnl4sl" path="res://assets/MicrowaveO.png" id="1_g3o0j"]
+[ext_resource type="Texture2D" uid="uid://chsbbi73gnvac" path="res://assets/textbox.png" id="2_58u3k"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="3_ibrlr"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="4_mwmjw"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="5_cwf2y"]
+[ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="6_vpxcu"]
+[ext_resource type="Texture2D" uid="uid://capnh5433amv1" path="res://assets/kitchen items/Butter.png" id="8_k1jr4"]
+[ext_resource type="Texture2D" uid="uid://b8x3gxtovjyyd" path="res://assets/kitchen items/chocolate chips.png" id="9_umms5"]
+[ext_resource type="Texture2D" uid="uid://b56cx7n4wroha" path="res://assets/kitchen items/flour.png" id="10_ktc20"]
+[ext_resource type="Texture2D" uid="uid://b5fjn6o1433ji" path="res://assets/kitchen items/vanilla.png" id="11_bs8bs"]
+[ext_resource type="Texture2D" uid="uid://dq78ohah3j5ud" path="res://assets/kitchen items/sugar.png" id="12_88wuv"]
+[ext_resource type="Texture2D" uid="uid://lgaqxplcxq1" path="res://assets/kitchen items/egg.png" id="13_umms5"]
+[ext_resource type="Texture2D" uid="uid://vq788cv73ypa" path="res://assets/kitchen items/bowll.png" id="14_88wuv"]
+[ext_resource type="Texture2D" uid="uid://bepfjncllhjay" path="res://assets/kitchen items/doorC.png" id="15_acu1m"]
+[ext_resource type="Texture2D" uid="uid://b7aaers55r3os" path="res://assets/kitchen items/doorO.png" id="16_87bic"]
+
+[sub_resource type="Animation" id="Animation_acu1m"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_87bic"]
+resource_name = "close"
+length = 1.5999999999999999
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorC:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorO:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorO:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.0028901, 1), Vector2(0.008670458, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoorO:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(280.75, 396), Vector2(366.75, 396)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorC:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0028901733, 1), Vector2(0.0028901696, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DoorC:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(367.75, 396), Vector2(367.75, 396), Vector2(454, 396)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("fridge:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(188, 298), Vector2(360, 296)]
+}
+
+[sub_resource type="Animation" id="Animation_k1cyo"]
+resource_name = "open"
+length = 1.5999999999999999
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorC:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorO:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorO:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.00867052, 1), Vector2(0.00867052, 1), Vector2(1.0028901, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoorO:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(366.75, 396), Vector2(366.75, 396), Vector2(280.75, 396)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorC:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.0028901733, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DoorC:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(454, 396), Vector2(367.75, 396)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("fridge:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 299), Vector2(188, 298)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fy06"]
+_data = {
+&"RESET": SubResource("Animation_acu1m"),
+&"close": SubResource("Animation_87bic"),
+&"open": SubResource("Animation_k1cyo")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1596799426]
+script = ExtResource("1_acu1m")
+
+[node name="Room3" type="Sprite2D" parent="." unique_id=441975120]
+position = Vector2(640, 360)
+texture = ExtResource("1_58u3k")
+
+[node name="MicrowaveO" type="Sprite2D" parent="." unique_id=1598015017]
+visible = false
+position = Vector2(1081, 418)
+texture = ExtResource("1_g3o0j")
+
+[node name="Microwave" type="Button" parent="." unique_id=1953191218]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1037.0
+offset_top = 365.0
+offset_right = 1247.0
+offset_bottom = 468.0
+mouse_default_cursor_shape = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2066841203]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1000578147]
+position = Vector2(53, 275.00003)
+scale = Vector2(0.732, 0.732)
+texture = ExtResource("2_58u3k")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=669055466]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1524166661]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=2124649401]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=1486750499]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=967158969]
+visible = false
+offset_left = -88.0
+offset_top = -71.0
+offset_right = 244.43158
+offset_bottom = 16.0
+scale = Vector2(0.852054, 0.852054)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_mwmjw")
+theme_override_styles/pressed = ExtResource("5_cwf2y")
+theme_override_styles/hover = ExtResource("5_cwf2y")
+theme_override_styles/focus = ExtResource("5_cwf2y")
+text = "hahaha"
+
+[node name="pausemenu" parent="Camera2D" unique_id=2056926520 instance=ExtResource("6_vpxcu")]
+visible = false
+position = Vector2(-640, -360)
+
+[node name="Butter" type="Sprite2D" parent="." unique_id=460479774]
+position = Vector2(442, 419.00003)
+scale = Vector2(0.28488377, 0.28488377)
+texture = ExtResource("8_k1jr4")
+
+[node name="ChocolateChips" type="Sprite2D" parent="." unique_id=1892285315]
+position = Vector2(1110, 177)
+scale = Vector2(0.266279, 0.266279)
+texture = ExtResource("9_umms5")
+
+[node name="Flour" type="Sprite2D" parent="." unique_id=1940048332]
+position = Vector2(394, 164)
+scale = Vector2(0.25681803, 0.25681806)
+texture = ExtResource("10_ktc20")
+
+[node name="Vanilla" type="Sprite2D" parent="." unique_id=1532786921]
+position = Vector2(405.00006, 342)
+scale = Vector2(0.2411503, 0.24115029)
+texture = ExtResource("11_bs8bs")
+
+[node name="Sugar" type="Sprite2D" parent="." unique_id=2065814834]
+position = Vector2(1228, 167)
+scale = Vector2(0.26858103, 0.26858103)
+texture = ExtResource("12_88wuv")
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=1109630358]
+position = Vector2(506, 355)
+scale = Vector2(0.22033887, 0.22033887)
+texture = ExtResource("13_umms5")
+
+[node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
+position = Vector2(817.99994, 453)
+scale = Vector2(0.23667851, 0.2366785)
+texture = ExtResource("14_88wuv")
+
+[node name="DoorC" type="Sprite2D" parent="." unique_id=232497578]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
+position = Vector2(454, 396)
+texture = ExtResource("15_acu1m")
+
+[node name="DoorO" type="Sprite2D" parent="." unique_id=194833472]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
+position = Vector2(366.75, 396)
+scale = Vector2(0.00867052, 1)
+texture = ExtResource("16_87bic")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2057616898]
+libraries/ = SubResource("AnimationLibrary_3fy06")
+
+[node name="fridge" type="Button" parent="." unique_id=694302824]
+modulate = Color(1, 1, 1, 0)
+offset_left = 360.0
+offset_top = 299.0
+offset_right = 546.9999
+offset_bottom = 493.0
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="Microwave" to="." method="_on_microwave_pressed"]
+[connection signal="pressed" from="fridge" to="." method="_on_fridge_pressed"]
