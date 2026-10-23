@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="5_cwf2y"]
 [ext_resource type="PackedScene" uid="uid://c0shnoab3fork" path="res://scenes/pausemenu.tscn" id="6_vpxcu"]
 [ext_resource type="Texture2D" uid="uid://capnh5433amv1" path="res://assets/kitchen items/Butter.png" id="8_k1jr4"]
+[ext_resource type="Script" uid="uid://bsncihg5qo4wn" path="res://scripts/rigidbody2.gd" id="9_87bic"]
 [ext_resource type="Texture2D" uid="uid://b8x3gxtovjyyd" path="res://assets/kitchen items/chocolate chips.png" id="9_umms5"]
 [ext_resource type="Texture2D" uid="uid://b56cx7n4wroha" path="res://assets/kitchen items/flour.png" id="10_ktc20"]
 [ext_resource type="Texture2D" uid="uid://b5fjn6o1433ji" path="res://assets/kitchen items/vanilla.png" id="11_bs8bs"]
@@ -18,12 +19,31 @@
 [ext_resource type="Texture2D" uid="uid://bepfjncllhjay" path="res://assets/kitchen items/doorC.png" id="15_acu1m"]
 [ext_resource type="Texture2D" uid="uid://b7aaers55r3os" path="res://assets/kitchen items/doorO.png" id="16_87bic"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(66, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
+size = Vector2(117, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
+size = Vector2(58, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48q5p"]
+size = Vector2(29, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yexw1"]
+size = Vector2(82.00006, 83)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldxs4"]
+radius = 14.0
+height = 38.0
+
 [sub_resource type="Animation" id="Animation_acu1m"]
 length = 0.001
 
 [sub_resource type="Animation" id="Animation_87bic"]
 resource_name = "close"
-length = 1.5999999999999999
+length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,7 +131,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_k1cyo"]
 resource_name = "open"
-length = 1.5999999999999999
+length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -292,35 +312,81 @@ text = "hahaha"
 visible = false
 position = Vector2(-640, -360)
 
-[node name="Butter" type="Sprite2D" parent="." unique_id=460479774]
-position = Vector2(442, 419.00003)
+[node name="Butter" type="RigidBody2D" parent="." unique_id=180763024]
+position = Vector2(443, 419)
+script = ExtResource("9_87bic")
+
+[node name="Butter2" type="Sprite2D" parent="Butter" unique_id=460479774]
+position = Vector2(-1, 3.0517578e-05)
 scale = Vector2(0.28488377, 0.28488377)
 texture = ExtResource("8_k1jr4")
 
-[node name="ChocolateChips" type="Sprite2D" parent="." unique_id=1892285315]
-position = Vector2(1110, 177)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Butter" unique_id=1535981923]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="Chocolate" type="RigidBody2D" parent="." unique_id=1205048883]
+position = Vector2(1109, 178)
+script = ExtResource("9_87bic")
+
+[node name="ChocolateChips" type="Sprite2D" parent="Chocolate" unique_id=1892285315]
+position = Vector2(1, -1)
 scale = Vector2(0.266279, 0.266279)
 texture = ExtResource("9_umms5")
 
-[node name="Flour" type="Sprite2D" parent="." unique_id=1940048332]
-position = Vector2(394, 164)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chocolate" unique_id=519508582]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_0kpj8")
+
+[node name="Flour" type="RigidBody2D" parent="." unique_id=1396237039]
+position = Vector2(394, 167)
+script = ExtResource("9_87bic")
+
+[node name="Flour2" type="Sprite2D" parent="Flour" unique_id=1940048332]
+position = Vector2(0, -3)
 scale = Vector2(0.25681803, 0.25681806)
 texture = ExtResource("10_ktc20")
 
-[node name="Vanilla" type="Sprite2D" parent="." unique_id=1532786921]
-position = Vector2(405.00006, 342)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flour" unique_id=1797307924]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_w173s")
+
+[node name="Vanila" type="RigidBody2D" parent="." unique_id=1484847621]
+position = Vector2(405, 351)
+script = ExtResource("9_87bic")
+
+[node name="Vanilla" type="Sprite2D" parent="Vanila" unique_id=1532786921]
+position = Vector2(6.1035156e-05, -9)
 scale = Vector2(0.2411503, 0.24115029)
 texture = ExtResource("11_bs8bs")
 
-[node name="Sugar" type="Sprite2D" parent="." unique_id=2065814834]
-position = Vector2(1228, 167)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vanila" unique_id=1979480995]
+position = Vector2(-0.5, -9)
+shape = SubResource("RectangleShape2D_48q5p")
+
+[node name="Sugar" type="RigidBody2D" parent="." unique_id=986341801]
+position = Vector2(1229.0001, 167)
+script = ExtResource("9_87bic")
+
+[node name="Sugar2" type="Sprite2D" parent="Sugar" unique_id=2065814834]
+position = Vector2(-1.0001221, 0)
 scale = Vector2(0.26858103, 0.26858103)
 texture = ExtResource("12_88wuv")
 
-[node name="Egg" type="Sprite2D" parent="." unique_id=1109630358]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sugar" unique_id=586085950]
+position = Vector2(-1.0001221, -0.5)
+shape = SubResource("RectangleShape2D_yexw1")
+
+[node name="Egg" type="RigidBody2D" parent="." unique_id=345838805]
 position = Vector2(506, 355)
+script = ExtResource("9_87bic")
+
+[node name="Egg2" type="Sprite2D" parent="Egg" unique_id=1109630358]
 scale = Vector2(0.22033887, 0.22033887)
 texture = ExtResource("13_umms5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=621596958]
+shape = SubResource("CapsuleShape2D_ldxs4")
 
 [node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
 position = Vector2(817.99994, 453)
