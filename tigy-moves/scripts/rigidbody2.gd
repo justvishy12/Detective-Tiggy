@@ -13,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 		global_position = get_global_mouse_position()
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:                                        
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:                                     
 		if event.is_pressed() and can_move == true:
 
 			PhysicsServer2D.body_set_state(

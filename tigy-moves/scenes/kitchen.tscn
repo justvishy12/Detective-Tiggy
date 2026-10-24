@@ -18,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://vq788cv73ypa" path="res://assets/kitchen items/bowll.png" id="14_88wuv"]
 [ext_resource type="Texture2D" uid="uid://bepfjncllhjay" path="res://assets/kitchen items/doorC.png" id="15_acu1m"]
 [ext_resource type="Texture2D" uid="uid://b7aaers55r3os" path="res://assets/kitchen items/doorO.png" id="16_87bic"]
+[ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="19_k1cyo"]
+[ext_resource type="Texture2D" uid="uid://bpdive2tdxe6h" path="res://assets/kitchen items/mixed.png" id="20_e7cmp"]
+[ext_resource type="Texture2D" uid="uid://b5itui1lhfx38" path="res://assets/kitchen items/unmixed.png" id="21_f125y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
+size = Vector2(947, 715)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
 size = Vector2(66, 26)
@@ -224,9 +230,6 @@ _data = {
 &"open": SubResource("Animation_k1cyo")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
-size = Vector2(1276, 715)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jet7i"]
 size = Vector2(211.25, 20)
 
@@ -241,6 +244,10 @@ size = Vector2(190, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h3hs"]
 size = Vector2(142, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kpj8"]
+radius = 142.9868
+height = 392.01294
 
 [node name="Node2D" type="Node2D" unique_id=1596799426]
 script = ExtResource("1_acu1m")
@@ -262,77 +269,17 @@ offset_right = 1247.0
 offset_bottom = 468.0
 mouse_default_cursor_shape = 2
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2066841203]
-position = Vector2(640, 360)
-
-[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1000578147]
-position = Vector2(53, 275.00003)
-scale = Vector2(0.732, 0.732)
-texture = ExtResource("2_58u3k")
-
-[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=669055466]
-offset_left = -355.12192
-offset_top = -94.2439
-offset_right = -134.12192
-offset_bottom = -58.73169
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("3_ibrlr")
-theme_override_font_sizes/font_size = 32
-text = "Detective Tiggy"
-
-[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1524166661]
-offset_left = -217.17072
-offset_top = -39.609756
-offset_right = 280.63885
-offset_bottom = 29.390244
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("3_ibrlr")
-theme_override_font_sizes/font_size = 32
-text = "Hey, what are you doing there, this is my detective area."
-autowrap_mode = 2
-
-[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=2124649401]
-offset_left = 234.92682
-offset_top = 64.19512
-offset_right = 353.92682
-offset_bottom = 87.195114
-theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
-theme_override_fonts/font = ExtResource("3_ibrlr")
-theme_override_font_sizes/font_size = 16
-text = "SPACE TO SKIP  "
-
-[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=1486750499]
-offset_left = -367.41464
-offset_top = -46.439026
-offset_right = -230.82928
-offset_bottom = 71.02435
-expand_mode = 2
-stretch_mode = 4
-
-[node name="you" type="Button" parent="Camera2D" unique_id=967158969]
+[node name="border" type="Area2D" parent="." unique_id=561512033]
 visible = false
-offset_left = -88.0
-offset_top = -71.0
-offset_right = 244.43158
-offset_bottom = 16.0
-scale = Vector2(0.852054, 0.852054)
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_ibrlr")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("4_mwmjw")
-theme_override_styles/pressed = ExtResource("5_cwf2y")
-theme_override_styles/hover = ExtResource("5_cwf2y")
-theme_override_styles/focus = ExtResource("5_cwf2y")
-text = "hahaha"
+modulate = Color(1, 1, 1, 0)
 
-[node name="pausemenu" parent="Camera2D" unique_id=2056926520 instance=ExtResource("6_vpxcu")]
-visible = false
-position = Vector2(-640, -360)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=892649574]
+position = Vector2(803.5, 358.5)
+shape = SubResource("RectangleShape2D_d7jr1")
 
 [node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
-position = Vector2(817.99994, 453)
-scale = Vector2(0.23667851, 0.2366785)
+position = Vector2(820, 466.00003)
+scale = Vector2(0.08219851, 0.0821985)
 texture = ExtResource("14_88wuv")
 
 [node name="Butter" type="RigidBody2D" parent="." unique_id=180763024 groups=["ingredients"]]
@@ -431,12 +378,6 @@ texture = ExtResource("16_87bic")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2057616898]
 libraries/ = SubResource("AnimationLibrary_3fy06")
 
-[node name="border" type="Area2D" parent="." unique_id=561512033]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=892649574]
-position = Vector2(639, 358.5)
-shape = SubResource("RectangleShape2D_d7jr1")
-
 [node name="fridge" type="Button" parent="." unique_id=694302824]
 modulate = Color(1, 1, 1, 0)
 offset_left = 360.0
@@ -480,12 +421,117 @@ shape = SubResource("RectangleShape2D_jet7i")
 position = Vector2(1207, 530)
 shape = SubResource("RectangleShape2D_4h3hs")
 
+[node name="DesertRecipe" type="Sprite2D" parent="." unique_id=1071040333]
+position = Vector2(820, 247)
+scale = Vector2(0.1996181, 0.19961806)
+texture = ExtResource("19_k1cyo")
+
+[node name="Panel" type="Panel" parent="." unique_id=346473808]
+offset_left = -12.0
+offset_top = -17.0
+offset_right = 1329.0
+offset_bottom = 736.0
+mouse_filter = 1
+
+[node name="Bowll2" type="Sprite2D" parent="." unique_id=389627490]
+position = Vector2(704, 384)
+scale = Vector2(0.26123977, 0.26123974)
+texture = ExtResource("14_88wuv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2066841203]
+position = Vector2(640, 360)
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1000578147]
+position = Vector2(53, 275.00003)
+scale = Vector2(0.732, 0.732)
+texture = ExtResource("2_58u3k")
+
+[node name="namelabel" type="Label" parent="Camera2D/Textbox" unique_id=669055466]
+offset_left = -355.12192
+offset_top = -94.2439
+offset_right = -134.12192
+offset_bottom = -58.73169
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+text = "Detective Tiggy"
+
+[node name="textlabel" type="Label" parent="Camera2D/Textbox" unique_id=1524166661]
+offset_left = -217.17072
+offset_top = -39.609756
+offset_right = 280.63885
+offset_bottom = 29.390244
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+text = "Hey, what are you doing there, this is my detective area."
+autowrap_mode = 2
+
+[node name="skiplabel" type="Label" parent="Camera2D/Textbox" unique_id=2124649401]
+offset_left = 234.92682
+offset_top = 64.19512
+offset_right = 353.92682
+offset_bottom = 87.195114
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 16
+text = "SPACE TO SKIP  "
+
+[node name="photobox" type="TextureRect" parent="Camera2D/Textbox" unique_id=1486750499]
+offset_left = -367.41464
+offset_top = -46.439026
+offset_right = -230.82928
+offset_bottom = 71.02435
+expand_mode = 2
+stretch_mode = 4
+
+[node name="you" type="Button" parent="Camera2D" unique_id=967158969]
+visible = false
+offset_left = -88.0
+offset_top = -71.0
+offset_right = 244.43158
+offset_bottom = 16.0
+scale = Vector2(0.852054, 0.852054)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ibrlr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_mwmjw")
+theme_override_styles/pressed = ExtResource("5_cwf2y")
+theme_override_styles/hover = ExtResource("5_cwf2y")
+theme_override_styles/focus = ExtResource("5_cwf2y")
+text = "hahaha"
+
+[node name="pausemenu" parent="Camera2D" unique_id=2056926520 instance=ExtResource("6_vpxcu")]
+visible = false
+position = Vector2(-640, -360)
+
+[node name="Mixed" type="Sprite2D" parent="." unique_id=2017366262]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(704, 333.99997)
+scale = Vector2(0.261, 0.261)
+texture = ExtResource("20_e7cmp")
+
+[node name="Unmixed" type="Sprite2D" parent="." unique_id=659752338]
+position = Vector2(704, 335)
+scale = Vector2(0.261, 0.261)
+texture = ExtResource("21_f125y")
+
+[node name="mousemix" type="Area2D" parent="." unique_id=1366953315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mousemix" unique_id=2086172725]
+position = Vector2(702.99994, 338.99997)
+rotation = -1.5748196
+shape = SubResource("CapsuleShape2D_0kpj8")
+
 [connection signal="pressed" from="Microwave" to="." method="_on_microwave_pressed"]
+[connection signal="body_exited" from="border" to="." method="_on_border_body_exited"]
 [connection signal="input_event" from="Butter" to="Butter" method="_on_input_event"]
 [connection signal="input_event" from="Chocolate" to="Chocolate" method="_on_input_event"]
 [connection signal="input_event" from="Flour" to="Flour" method="_on_input_event"]
 [connection signal="input_event" from="Vanila" to="Vanila" method="_on_input_event"]
 [connection signal="input_event" from="Sugar" to="Sugar" method="_on_input_event"]
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
-[connection signal="body_exited" from="border" to="." method="_on_border_body_exited"]
 [connection signal="pressed" from="fridge" to="." method="_on_fridge_pressed"]
+[connection signal="mouse_entered" from="mousemix" to="." method="_on_mousemix_mouse_entered"]
+[connection signal="mouse_exited" from="mousemix" to="." method="_on_mousemix_mouse_exited"]
