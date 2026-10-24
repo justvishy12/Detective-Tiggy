@@ -224,6 +224,24 @@ _data = {
 &"open": SubResource("Animation_k1cyo")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
+size = Vector2(1276, 715)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jet7i"]
+size = Vector2(211.25, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1cyo"]
+size = Vector2(5, 541)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fy06"]
+size = Vector2(7, 928)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87bic"]
+size = Vector2(190, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h3hs"]
+size = Vector2(142, 20)
+
 [node name="Node2D" type="Node2D" unique_id=1596799426]
 script = ExtResource("1_acu1m")
 
@@ -312,8 +330,14 @@ text = "hahaha"
 visible = false
 position = Vector2(-640, -360)
 
-[node name="Butter" type="RigidBody2D" parent="." unique_id=180763024]
+[node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
+position = Vector2(817.99994, 453)
+scale = Vector2(0.23667851, 0.2366785)
+texture = ExtResource("14_88wuv")
+
+[node name="Butter" type="RigidBody2D" parent="." unique_id=180763024 groups=["ingredients"]]
 position = Vector2(443, 419)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="Butter2" type="Sprite2D" parent="Butter" unique_id=460479774]
@@ -325,8 +349,9 @@ texture = ExtResource("8_k1jr4")
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ldxs4")
 
-[node name="Chocolate" type="RigidBody2D" parent="." unique_id=1205048883]
+[node name="Chocolate" type="RigidBody2D" parent="." unique_id=1205048883 groups=["ingredients"]]
 position = Vector2(1109, 178)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="ChocolateChips" type="Sprite2D" parent="Chocolate" unique_id=1892285315]
@@ -338,8 +363,9 @@ texture = ExtResource("9_umms5")
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_0kpj8")
 
-[node name="Flour" type="RigidBody2D" parent="." unique_id=1396237039]
+[node name="Flour" type="RigidBody2D" parent="." unique_id=1396237039 groups=["ingredients"]]
 position = Vector2(394, 167)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="Flour2" type="Sprite2D" parent="Flour" unique_id=1940048332]
@@ -351,8 +377,9 @@ texture = ExtResource("10_ktc20")
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_w173s")
 
-[node name="Vanila" type="RigidBody2D" parent="." unique_id=1484847621]
+[node name="Vanila" type="RigidBody2D" parent="." unique_id=1484847621 groups=["ingredients"]]
 position = Vector2(405, 351)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="Vanilla" type="Sprite2D" parent="Vanila" unique_id=1532786921]
@@ -364,8 +391,9 @@ texture = ExtResource("11_bs8bs")
 position = Vector2(-0.5, -9)
 shape = SubResource("RectangleShape2D_48q5p")
 
-[node name="Sugar" type="RigidBody2D" parent="." unique_id=986341801]
+[node name="Sugar" type="RigidBody2D" parent="." unique_id=986341801 groups=["ingredients"]]
 position = Vector2(1229.0001, 167)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="Sugar2" type="Sprite2D" parent="Sugar" unique_id=2065814834]
@@ -377,8 +405,9 @@ texture = ExtResource("12_88wuv")
 position = Vector2(-1.0001221, -0.5)
 shape = SubResource("RectangleShape2D_yexw1")
 
-[node name="Egg" type="RigidBody2D" parent="." unique_id=345838805]
+[node name="Egg" type="RigidBody2D" parent="." unique_id=345838805 groups=["ingredients"]]
 position = Vector2(506, 355)
+input_pickable = true
 script = ExtResource("9_87bic")
 
 [node name="Egg2" type="Sprite2D" parent="Egg" unique_id=1109630358]
@@ -387,11 +416,6 @@ texture = ExtResource("13_umms5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=621596958]
 shape = SubResource("CapsuleShape2D_ldxs4")
-
-[node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
-position = Vector2(817.99994, 453)
-scale = Vector2(0.23667851, 0.2366785)
-texture = ExtResource("14_88wuv")
 
 [node name="DoorC" type="Sprite2D" parent="." unique_id=232497578]
 modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
@@ -407,6 +431,12 @@ texture = ExtResource("16_87bic")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2057616898]
 libraries/ = SubResource("AnimationLibrary_3fy06")
 
+[node name="border" type="Area2D" parent="." unique_id=561512033]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=892649574]
+position = Vector2(639, 358.5)
+shape = SubResource("RectangleShape2D_d7jr1")
+
 [node name="fridge" type="Button" parent="." unique_id=694302824]
 modulate = Color(1, 1, 1, 0)
 offset_left = 360.0
@@ -415,5 +445,47 @@ offset_right = 546.9999
 offset_bottom = 493.0
 mouse_default_cursor_shape = 2
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1454800911]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1548559226]
+position = Vector2(452, 520)
+shape = SubResource("RectangleShape2D_jet7i")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=157883936]
+position = Vector2(347, 273.5)
+shape = SubResource("RectangleShape2D_k1cyo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1991224918]
+position = Vector2(1276, 279)
+shape = SubResource("RectangleShape2D_k1cyo")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1422029479]
+position = Vector2(814, 4.50002)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_3fy06")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=288417879]
+position = Vector2(652, 493)
+shape = SubResource("RectangleShape2D_87bic")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=947693555]
+position = Vector2(828.375, 540)
+shape = SubResource("RectangleShape2D_jet7i")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1823076128]
+position = Vector2(1037, 502)
+shape = SubResource("RectangleShape2D_jet7i")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=939815104]
+position = Vector2(1207, 530)
+shape = SubResource("RectangleShape2D_4h3hs")
+
 [connection signal="pressed" from="Microwave" to="." method="_on_microwave_pressed"]
+[connection signal="input_event" from="Butter" to="Butter" method="_on_input_event"]
+[connection signal="input_event" from="Chocolate" to="Chocolate" method="_on_input_event"]
+[connection signal="input_event" from="Flour" to="Flour" method="_on_input_event"]
+[connection signal="input_event" from="Vanila" to="Vanila" method="_on_input_event"]
+[connection signal="input_event" from="Sugar" to="Sugar" method="_on_input_event"]
+[connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
+[connection signal="body_exited" from="border" to="." method="_on_border_body_exited"]
 [connection signal="pressed" from="fridge" to="." method="_on_fridge_pressed"]
