@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cfxcfkkdnepuy"]
+
+[ext_resource type="Script" uid="uid://drmqsm38aenqw" path="res://scripts/end.gd" id="1_8hmjt"]
+[ext_resource type="Texture2D" uid="uid://dogteegxlk0sw" path="res://assets/scene bg/Starting Scene BG.png" id="1_mwn6m"]
+[ext_resource type="Texture2D" uid="uid://djexgh6c21jex" path="res://assets/cookie.png" id="3_o5lv4"]
+[ext_resource type="Texture2D" uid="uid://c568u6tvrafmh" path="res://assets/Tiggy.png" id="4_ee763"]
+[ext_resource type="Texture2D" uid="uid://dbrwvhrdmgw5i" path="res://assets/Tusky.png" id="5_nl5ow"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="6_ovs12"]
+
+[node name="Node2D" type="Node2D" unique_id=22134106]
+script = ExtResource("1_8hmjt")
+
+[node name="StartingSceneBg" type="Sprite2D" parent="." unique_id=1968333300]
+position = Vector2(640, 360)
+texture = ExtResource("1_mwn6m")
+
+[node name="Cookie" type="Sprite2D" parent="." unique_id=1432327204]
+position = Vector2(150.31024, 687.75)
+scale = Vector2(0.76506025, 0.76506025)
+texture = ExtResource("3_o5lv4")
+
+[node name="Tiggy" type="Sprite2D" parent="." unique_id=1111925423]
+position = Vector2(325.00003, 562)
+scale = Vector2(0.84175545, 0.84175545)
+texture = ExtResource("4_ee763")
+
+[node name="Tusky" type="Sprite2D" parent="." unique_id=1112240227]
+position = Vector2(543.00006, 596.00006)
+scale = Vector2(0.84175545, 0.84175545)
+texture = ExtResource("5_nl5ow")
+
+[node name="Label" type="Label" parent="." unique_id=1632547746]
+offset_left = 408.0
+offset_top = 80.0
+offset_right = 879.0
+offset_bottom = 280.0
+theme_override_fonts/font = ExtResource("6_ovs12")
+theme_override_font_sizes/font_size = 128
+text = "THE END"

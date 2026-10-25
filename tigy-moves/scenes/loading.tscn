@@ -40,6 +40,28 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt702"]
+bg_color = Color(0.4843766, 0.5969794, 0.82723457, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ytni"]
+bg_color = Color(0.35479546, 0.47131866, 0.72409207, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
 [sub_resource type="Animation" id="Animation_2ytni"]
 length = 0.001
 tracks/0/type = "value"
@@ -367,6 +389,45 @@ theme_override_fonts/font = ExtResource("4_nxo4k")
 theme_override_font_sizes/font_size = 20
 text = "xx:xx"
 
+[node name="settings" type="Button" parent="Loading" unique_id=276388098]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 105.0
+offset_right = 264.0
+offset_bottom = 159.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yt702")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ytni")
+text = "Preferences"
+
+[node name="guide" type="Button" parent="Loading" unique_id=172190149]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 178.0
+offset_right = 208.0
+offset_bottom = 232.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yt702")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ytni")
+text = "Guide"
+
+[node name="credits" type="Button" parent="Loading" unique_id=285354765]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 250.0
+offset_right = 208.0
+offset_bottom = 304.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_nxo4k")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yt702")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ytni")
+text = "Credits"
+
 [node name="Label" type="Label" parent="." unique_id=1717727455]
 offset_left = 384.0
 offset_top = 264.0
@@ -380,6 +441,7 @@ text = "Detective Tiggy"
 libraries/ = SubResource("AnimationLibrary_c856a")
 
 [node name="Panel" type="Panel" parent="." unique_id=1584305138]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -6.0
 offset_top = -13.0
@@ -396,3 +458,6 @@ libraries/ = SubResource("AnimationLibrary_yt702")
 [connection signal="pressed" from="Loading/Save2/reset2" to="." method="_on_reset_2_pressed"]
 [connection signal="pressed" from="Loading/Save3/load3" to="." method="_on_load_3_pressed"]
 [connection signal="pressed" from="Loading/Save3/reset3" to="." method="_on_reset_3_pressed"]
+[connection signal="pressed" from="Loading/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Loading/guide" to="." method="_on_guide_pressed"]
+[connection signal="pressed" from="Loading/credits" to="." method="_on_credits_pressed"]

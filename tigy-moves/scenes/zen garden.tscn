@@ -338,15 +338,24 @@ bus = &"Sfx"
 
 [node name="sand" type="AudioStreamPlayer2D" parent="." unique_id=490101272]
 stream = ExtResource("17_vab3i")
-volume_db = 10.0
+volume_db = 20.0
 pitch_scale = 0.76
 bus = &"Sfx"
 parameters/looping = true
 
 [node name="tusk" type="AudioStreamPlayer2D" parent="." unique_id=27586905]
 stream = ExtResource("18_x4nyo")
-volume_db = 3.0
+volume_db = 5.0
 pitch_scale = 0.76
 bus = &"Sfx"
 
+[node name="Button" type="Button" parent="." unique_id=917547260]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 45.0
+offset_top = 331.0
+offset_right = 230.0
+offset_bottom = 590.0
+
 [connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

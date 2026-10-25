@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://bsbfhydymeogi"]
+
+[ext_resource type="Texture2D" uid="uid://wp7bosu7r8vb" path="res://assets/scene bg/BG.png" id="1_m3b3w"]
+[ext_resource type="Script" uid="uid://bxutebhjm0ih5" path="res://scripts/pausemenu.gd" id="2_l2hob"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="3_xethu"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="4_xkex2"]
+[ext_resource type="Script" uid="uid://bqghl0t1w822o" path="res://scripts/mastervol.gd" id="5_dpdsc"]
+[ext_resource type="Script" uid="uid://ch4faxujuk0gv" path="res://scripts/musicvol.gd" id="6_8vh4o"]
+[ext_resource type="Script" uid="uid://dw7icd234afrc" path="res://scripts/sfxvol.gd" id="7_3n38k"]
+[ext_resource type="Script" uid="uid://qs2js8hxr1uw" path="res://scripts/textspeed.gd" id="8_pvn1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3b3w"]
+bg_color = Color(0.7411765, 0.47058824, 0.18039216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2hob"]
+bg_color = Color(0.18486193, 0.6511369, 0.84962815, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xethu"]
+bg_color = Color(0.921851, 0.4004664, 0.5311092, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkex2"]
+bg_color = Color(0.4843766, 0.5969794, 0.82723457, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpdsc"]
+bg_color = Color(0.35479546, 0.47131866, 0.72409207, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Node2D" type="Node2D" unique_id=823339490]
+script = ExtResource("2_l2hob")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=914727944]
+position = Vector2(640, 360)
+texture = ExtResource("1_m3b3w")
+
+[node name="Panel2" type="Panel" parent="." unique_id=681435049]
+offset_left = 360.0
+offset_top = 136.0
+offset_right = 918.0
+offset_bottom = 599.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m3b3w")
+
+[node name="Label" type="Label" parent="." unique_id=609333381]
+offset_left = 536.0
+offset_top = 136.0
+offset_right = 741.0
+offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("3_xethu")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1286325653]
+offset_left = 386.0
+offset_top = 231.0
+offset_right = 630.0
+offset_bottom = 408.0
+theme_override_constants/separation = 15
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=392586156]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xkex2")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=635035586]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xkex2")
+theme_override_font_sizes/font_size = 32
+text = "Background Music"
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=807069853]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xkex2")
+theme_override_font_sizes/font_size = 32
+text = "Sound Effects"
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1808736509]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xkex2")
+theme_override_font_sizes/font_size = 32
+text = "Text Speed"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=317116914]
+offset_left = 649.0
+offset_top = 239.0
+offset_right = 893.0
+offset_bottom = 419.0
+theme_override_constants/separation = 33
+
+[node name="mastervol" type="HSlider" parent="VBoxContainer2" unique_id=1177947184]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l2hob")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xethu")
+value = 50.0
+script = ExtResource("5_dpdsc")
+bus_name = "Master"
+
+[node name="musicvol" type="HSlider" parent="VBoxContainer2" unique_id=1479296276]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l2hob")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xethu")
+value = 50.0
+script = ExtResource("6_8vh4o")
+bus_name = "Music"
+
+[node name="sfxvol" type="HSlider" parent="VBoxContainer2" unique_id=854740718]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l2hob")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xethu")
+value = 50.0
+script = ExtResource("7_3n38k")
+bus_name = "Sfx"
+
+[node name="textspeed" type="HSlider" parent="VBoxContainer2" unique_id=380687731]
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l2hob")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xethu")
+min_value = 0.01
+max_value = 0.1
+step = 0.001
+value = 0.05
+script = ExtResource("8_pvn1h")
+
+[node name="home" type="Button" parent="." unique_id=300393214]
+offset_left = 551.0
+offset_top = 483.0
+offset_right = 713.0
+offset_bottom = 537.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_xkex2")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xkex2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpdsc")
+text = "Home"
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

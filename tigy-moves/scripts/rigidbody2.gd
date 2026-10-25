@@ -9,6 +9,8 @@ func _ready() -> void:
 	gravity_scale = 0
 
 func _physics_process(_delta: float) -> void:
+	if global_position != start_position:
+		gravity_scale = 1
 	if dragging:
 		global_position = get_global_mouse_position()
 
@@ -30,6 +32,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and dragging:
+			$"..".check_ingredients()
 			dragging = false
 			freeze = false
 			gravity_scale = 1

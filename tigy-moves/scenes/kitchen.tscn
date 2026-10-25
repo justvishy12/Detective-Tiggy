@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bwg0hdslmto5s" path="res://assets/Desert Recipe.png" id="19_k1cyo"]
 [ext_resource type="Texture2D" uid="uid://bpdive2tdxe6h" path="res://assets/kitchen items/mixed.png" id="20_e7cmp"]
 [ext_resource type="Texture2D" uid="uid://b5itui1lhfx38" path="res://assets/kitchen items/unmixed.png" id="21_f125y"]
+[ext_resource type="Texture2D" uid="uid://dfh4766potnsi" path="res://assets/kitchen items/MicrowaveW.png" id="22_f125y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7jr1"]
 size = Vector2(947, 715)
@@ -256,6 +257,12 @@ script = ExtResource("1_acu1m")
 position = Vector2(640, 360)
 texture = ExtResource("1_58u3k")
 
+[node name="DesertRecipe" type="Sprite2D" parent="." unique_id=1071040333]
+visible = false
+position = Vector2(820, 247)
+scale = Vector2(0.1996181, 0.19961806)
+texture = ExtResource("19_k1cyo")
+
 [node name="MicrowaveO" type="Sprite2D" parent="." unique_id=1598015017]
 visible = false
 position = Vector2(1081, 418)
@@ -276,11 +283,6 @@ modulate = Color(1, 1, 1, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=892649574]
 position = Vector2(803.5, 358.5)
 shape = SubResource("RectangleShape2D_d7jr1")
-
-[node name="Bowll" type="Sprite2D" parent="." unique_id=1366128083]
-position = Vector2(820, 466.00003)
-scale = Vector2(0.08219851, 0.0821985)
-texture = ExtResource("14_88wuv")
 
 [node name="Butter" type="RigidBody2D" parent="." unique_id=180763024 groups=["ingredients"]]
 position = Vector2(443, 419)
@@ -421,12 +423,13 @@ shape = SubResource("RectangleShape2D_jet7i")
 position = Vector2(1207, 530)
 shape = SubResource("RectangleShape2D_4h3hs")
 
-[node name="DesertRecipe" type="Sprite2D" parent="." unique_id=1071040333]
-position = Vector2(820, 247)
-scale = Vector2(0.1996181, 0.19961806)
-texture = ExtResource("19_k1cyo")
+[node name="Bowll" type="Sprite2D" parent="." unique_id=1203247741]
+position = Vector2(821, 487)
+scale = Vector2(0.039, 0.039)
+texture = ExtResource("14_88wuv")
 
-[node name="Panel" type="Panel" parent="." unique_id=346473808]
+[node name="bg p" type="Panel" parent="." unique_id=346473808]
+visible = false
 offset_left = -12.0
 offset_top = -17.0
 offset_right = 1329.0
@@ -434,9 +437,36 @@ offset_bottom = 736.0
 mouse_filter = 1
 
 [node name="Bowll2" type="Sprite2D" parent="." unique_id=389627490]
+visible = false
 position = Vector2(704, 384)
 scale = Vector2(0.26123977, 0.26123974)
 texture = ExtResource("14_88wuv")
+
+[node name="Mixed" type="Sprite2D" parent="." unique_id=2017366262]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(704, 333.99997)
+scale = Vector2(0.261, 0.261)
+texture = ExtResource("20_e7cmp")
+
+[node name="Unmixed" type="Sprite2D" parent="." unique_id=659752338]
+visible = false
+position = Vector2(704, 335)
+scale = Vector2(0.261, 0.261)
+texture = ExtResource("21_f125y")
+
+[node name="mousemix" type="Area2D" parent="." unique_id=1366953315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mousemix" unique_id=2086172725]
+position = Vector2(702.99994, 338.99997)
+rotation = -1.5748196
+shape = SubResource("CapsuleShape2D_0kpj8")
+
+[node name="MicrowaveW" type="Sprite2D" parent="." unique_id=212892439]
+visible = false
+position = Vector2(1142.5199, 417.53125)
+scale = Vector2(0.42020738, 0.41964293)
+texture = ExtResource("22_f125y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2066841203]
 position = Vector2(640, 360)
@@ -506,23 +536,13 @@ text = "hahaha"
 visible = false
 position = Vector2(-640, -360)
 
-[node name="Mixed" type="Sprite2D" parent="." unique_id=2017366262]
+[node name="fade" type="Panel" parent="." unique_id=1459566868]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(704, 333.99997)
-scale = Vector2(0.261, 0.261)
-texture = ExtResource("20_e7cmp")
-
-[node name="Unmixed" type="Sprite2D" parent="." unique_id=659752338]
-position = Vector2(704, 335)
-scale = Vector2(0.261, 0.261)
-texture = ExtResource("21_f125y")
-
-[node name="mousemix" type="Area2D" parent="." unique_id=1366953315]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mousemix" unique_id=2086172725]
-position = Vector2(702.99994, 338.99997)
-rotation = -1.5748196
-shape = SubResource("CapsuleShape2D_0kpj8")
+offset_left = -25.0
+offset_top = -12.0
+offset_right = 1304.0
+offset_bottom = 733.0
+mouse_filter = 2
 
 [connection signal="pressed" from="Microwave" to="." method="_on_microwave_pressed"]
 [connection signal="body_exited" from="border" to="." method="_on_border_body_exited"]
@@ -535,3 +555,4 @@ shape = SubResource("CapsuleShape2D_0kpj8")
 [connection signal="pressed" from="fridge" to="." method="_on_fridge_pressed"]
 [connection signal="mouse_entered" from="mousemix" to="." method="_on_mousemix_mouse_entered"]
 [connection signal="mouse_exited" from="mousemix" to="." method="_on_mousemix_mouse_exited"]
+[connection signal="pressed" from="Camera2D/you" to="." method="_on_you_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://xw0540jtf1je"]
+
+[ext_resource type="Texture2D" uid="uid://wp7bosu7r8vb" path="res://assets/scene bg/BG.png" id="1_rb1b7"]
+[ext_resource type="Script" uid="uid://cqflx2l2hviit" path="res://scripts/guide.gd" id="1_wxloj"]
+[ext_resource type="FontFile" uid="uid://c8cq5t5m3i67" path="res://fonts/Knewave/Knewave-Regular.ttf" id="2_wxloj"]
+[ext_resource type="FontFile" uid="uid://ck8vhdjjmp7sf" path="res://fonts/Jua-Regular.ttf" id="3_fd7ko"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhlb8"]
+bg_color = Color(0.7411765, 0.47058824, 0.18039216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd7ko"]
+bg_color = Color(0.4843766, 0.5969794, 0.82723457, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_law3w"]
+bg_color = Color(0.35479546, 0.47131866, 0.72409207, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Node2D" type="Node2D" unique_id=718118792]
+script = ExtResource("1_wxloj")
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=245585771]
+position = Vector2(640, 360)
+texture = ExtResource("1_rb1b7")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1670216936]
+offset_left = 360.0
+offset_top = 136.0
+offset_right = 918.0
+offset_bottom = 654.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhlb8")
+
+[node name="Label" type="Label" parent="." unique_id=113872161]
+offset_left = 536.0
+offset_top = 136.0
+offset_right = 741.0
+offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("2_wxloj")
+theme_override_font_sizes/font_size = 48
+text = "GUIDE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1593435946]
+offset_left = 385.0
+offset_top = 217.0
+offset_right = 898.0
+offset_bottom = 633.0
+theme_override_fonts/font = ExtResource("3_fd7ko")
+theme_override_font_sizes/font_size = 32
+text = "Welcome to Detective Tiggy, this is your full guide. During dialogue click space to skip text and go to the next, and press the button (your dialogue) in the center of the screen to continue. Press and move your mouse around when dragging an item, press \"Escape\" for the settings, and the restart a scene. Good luck detective!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="home" type="Button" parent="." unique_id=535273912]
+offset_left = 554.0
+offset_top = 586.0
+offset_right = 716.0
+offset_bottom = 640.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_fd7ko")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_fd7ko")
+theme_override_styles/hover = SubResource("StyleBoxFlat_law3w")
+text = "Home"
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

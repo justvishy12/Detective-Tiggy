@@ -3,9 +3,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("fade out")
+	if Global.fade == true:
+		$Label.visible = false
+	if Global.fade == false:
+		Global.fade = true
+		$AnimationPlayer.play("fade out")
 	SaveManager.current_slot = 0
 	refresh_slots()
+
 
 func refresh_slots():
 	for i in range(1, 4):
@@ -84,3 +89,15 @@ func _on_reset_3_pressed() -> void:
 	$Loading/Save1/Thumbnail.texture = load("res://assets/txture plc holder.png")
 	$Loading/Save1/HBoxContainer/date.text = "xx/xx/xxxx"
 	$Loading/Save1/HBoxContainer/time.text = "xx:xx" 
+
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/prefferences.tscn")
+
+
+func _on_guide_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/guide.tscn")
+
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

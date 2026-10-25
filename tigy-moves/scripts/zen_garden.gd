@@ -70,7 +70,7 @@ var dialogue = [
 		#9
 		"speaker": "cat",
 		"name": "Detective Tiggy",
-		"text": "Let's go back in, and i'm not forgeting about what you did! (click door) ",
+		"text": "Let's go back in, and you're making a mug cookie (click door) ",
 		"portrait": preload("res://assets/headshots/TIGGY FACE.png")
 	},
 
@@ -150,6 +150,7 @@ func _input(event):
 		$pan.play()
 		played2 = true
 		print(played2)
+		$Button.visible = true
 		$AnimationPlayer.play("grab_tusky")
 	if event.is_action_pressed("ui_accept") and !typing:
 		if dialogue_index < dialogue.size() and dialogue[dialogue_index]["speaker"] == "cat":
@@ -167,6 +168,8 @@ func _on_you_pressed() -> void:
 	show_next_dialogue()
 		
 func _ready() -> void:
+	Global.change = true
+	Global.changing()
 	$sand.play()
 	$AnimationPlayer.play("digging")
 	show_next_dialogue()
@@ -175,3 +178,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_button_pressed() -> void:
+	SaveManager.zen_gar = true
+	SaveManager.save_game(SaveManager.current_slot)
+	get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
